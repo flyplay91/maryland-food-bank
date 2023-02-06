@@ -1,0 +1,42 @@
+p {
+  margin: 0 0 1em;
+  font-weight: 500;
+  font-size: rem(14);
+  line-height: rem(20);
+  @include media($mobile-break) {
+    font-size: rem(18);
+    line-height: rem(30);
+  }
+}
+.lead-in {
+  @include lead-in();
+  &--centered {
+    text-align: center;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  margin-top: 0;
+  line-height: 1;
+}
+
+h1 {
+  @include h1();
+}
+
+h2 {
+  @include h2();
+}
+
+h3 {
+  @include h3();
+}
+
+h4 {
+  @include h4();
+}
+
+a {
+  color: $red;
+}

@@ -1,0 +1,41 @@
+.social-icons {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	margin-bottom: 10px;
+	list-style-type: none;
+	width: 100%;
+	@include media ('800'){
+		margin-bottom: 0;
+	}
+	li {
+    display: inherit;
+    margin-right: rem(12);
+	}
+	&__item {
+		margin: rem(0);
+		display: inline-block;
+		perspective: 1000px;
+		&:hover {
+			text-decoration: none;
+		}
+		i {
+			display: inline-block;
+      border-radius: 50%;
+      width: rem(34);
+      height: rem(34);
+      font-size: rem(18);
+      color: $gray1;
+      background-color: $white;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      transition: color .2s;
+			transform-style: preserve-3d;
+			&:hover {
+
+			}
+		}
+	}
+}

@@ -1,0 +1,5 @@
+.section--home-quotes {
+  @include media($mobile-break) {
+    margin-bottom: rem(80);
+  }
+}

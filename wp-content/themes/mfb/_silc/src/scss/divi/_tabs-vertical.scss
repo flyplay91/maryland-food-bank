@@ -1,0 +1,107 @@
+/*-----------------------------------------------------------------*/
+/*---------Vertical Tabs by Divi Soup (varing content CSS)---------*/
+/*-----------------------------------------------------------------*/
+
+
+/*Stack tabs vertically*/
+
+@media only screen and (min-width: 768px) {
+  .ds-tab-cube,
+  .ds-tab-cube ul.et_pb_tabs_controls,
+  .ds-tab-cube .et_pb_tabs_controls li,
+  .ds-tab-cube .et_pb_tabs {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+  }
+  /*Set the flex direction and control width*/
+  .ds-tab-cube ul.et_pb_tabs_controls {
+      background-color: #f4f4f4;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      width: 20%;
+  }
+  /*Align the tab titles*/
+  .ds-tab-cube .et_pb_tabs_controls li {
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+  }
+  /*Move the content to the right*/
+  .ds-tab-cube .et_pb_tabs {
+      margin-left: 20%;
+  }
+}
+
+
+/*Controls adjustment for mobile*/
+
+@media all and (max-width: 767px) {
+  .ds-tab-cube ul.et_pb_tabs_controls {
+      min-height: auto;
+  }
+  .ds-tab-cube .et_pb_tabs_controls li {
+      padding: 20px;
+      text-align: center;
+  }
+  /*Align the tabs control text centrally*/
+  .ds-tab-cube .et_pb_tabs_controls li a {
+      display: block;
+  }
+}
+
+
+/*Remove the grey borders*/
+
+.ds-tab-cube .et_pb_tabs_controls li,
+.ds-tab-cube .et_pb_tab,
+.ds-tab-cube.et_pb_tabs,
+.ds-tab-cube ul.et_pb_tabs_controls:after {
+  border: none !important;
+}
+
+
+/*Set the tab control and tab content background colours*/
+
+.ds-tab-cube .et_pb_tabs_controls li:nth-child(1),
+.ds-tab-cube .et_pb_tabs_controls li.et_pb_tab_active:nth-child(1),
+.ds-tab-cube .et_pb_tab:nth-child(1) {
+  background: #e1cfcd;
+}
+
+.ds-tab-cube .et_pb_tabs_controls li:nth-child(2),
+.ds-tab-cube .et_pb_tabs_controls li.et_pb_tab_active:nth-child(2),
+.ds-tab-cube .et_pb_tab:nth-child(2) {
+  background: #edc7c6;
+}
+
+.ds-tab-cube .et_pb_tabs_controls li:nth-child(3),
+.ds-tab-cube .et_pb_tabs_controls li.et_pb_tab_active:nth-child(3),
+.ds-tab-cube .et_pb_tab:nth-child(3) {
+  background: #b8a3b6;
+}
+
+.ds-tab-cube .et_pb_tabs_controls li:nth-child(4),
+.ds-tab-cube .et_pb_tabs_controls li.et_pb_tab_active:nth-child(4),
+.ds-tab-cube .et_pb_tab:nth-child(4) {
+  background: #899ba9;
+}
+
+
+/*To add more tabs simply copy this secton and increase the number by 1 i.e: (5) should be (6) is all 3 places. Then change the colour*/
+
+.ds-tab-cube .et_pb_tabs_controls li:nth-child(5),
+.ds-tab-cube .et_pb_tabs_controls li.et_pb_tab_active:nth-child(5),
+.ds-tab-cube .et_pb_tab:nth-child(5) {
+  background: #bfc1ce;
+}
+
+
+/*--------------------------------------------*/
+/*-------End Vertical Tabs by Divi Soup-------*/
+/*--------------------------------------------*/

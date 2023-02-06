@@ -1,0 +1,111 @@
+.event-block {
+  color: $base-font-color;
+  border-radius: $border-radius;
+  overflow: hidden;
+  display: block;
+  box-shadow: $shadow-diffuse;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background: $red;
+    color: $white;
+    .event-block__image {
+      transform: scale(1.1);
+    }
+  }
+  &__header {
+    position: relative;
+    min-height: rem(184);
+    @include media($mobile-break) {
+      min-height: rem(264);
+    }
+    overflow: hidden;
+  }
+  &__image {
+    background-color: $gray6;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: rem(184);
+    transition: transform 0.2s ease-in-out;
+    @include media($mobile-break) {
+      min-height: rem(264);
+    }
+    &:after {
+			display: block;
+			position: absolute;
+			background-image: linear-gradient(-180deg, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.84) 100%);
+			height: 100%;
+			width: 100%;
+			content: '';
+			opacity: 0.79;
+    }
+
+  }
+  &__datetime {
+    display: flex;
+    flex-direction: column;
+    padding: rem(10) rem(15);
+    width: 100%;
+    z-index: 1;
+    justify-content: flex-end;
+    position: absolute;
+    bottom: 0;
+    @include media($mobile-break) {
+      padding: rem(15) rem(22);
+      flex-direction: row;
+      align-items: flex-end;
+    }
+  }
+  &__date {
+    width: 100%;
+    color: $white;
+    font-weight: 700;
+    font-size: rem(14);
+    line-height: rem(21);
+    @include media($mobile-break) {
+
+    }
+  }
+
+  &__time {
+    width: 100%;
+    color: $white;
+    opacity: 0.8;
+    font-weight: 500;
+    font-size: rem(14);
+    line-height: rem(21);
+    order: -1;
+    @include media($mobile-break) {
+      text-align: right;
+      order: 1;
+    }
+  }
+  &__content {
+    padding: rem(16) rem(16);
+    @include media($mobile-break) {
+      padding: rem(30) rem(22);
+    }
+  }
+  &__title {
+    font-weight: 700;
+    font-size: rem(18);
+    line-height: rem(22);
+    letter-spacing: -0.24px;
+    margin-bottom: rem(10);
+    @include media($mobile-break) {
+      font-size: rem(26);
+      line-height: rem(26);
+      letter-spacing: -0.34px;
+      margin-bottom: rem(15);
+    }
+  }
+  &__text {
+    font-weight: 500;
+    font-size: rem(14);
+    line-height: rem(21);
+    @include media($mobile-break) {
+      font-size: rem(18);
+      line-height: rem(30);
+    }
+  }
+}

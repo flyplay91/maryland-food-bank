@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="41px" viewBox="0 0 32 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Mask</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-24.3%" y="-19.9%" width="148.5%" height="148.5%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="3" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.154013813 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Internals" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="0_3_0-HOMEPAGE_REF" transform="translate(-1239.000000, -4864.000000)" fill="#2B2F45" fill-rule="nonzero">
+            <g id="SPONSORS" transform="translate(0.000000, 4631.000000)">
+                <g id="NEXT" filter="url(#filter-1)" transform="translate(1219.000000, 217.000000)">
+                    <polygon id="Mask" transform="translate(36.113600, 33.520000) rotate(-90.000000) translate(-36.113600, -33.520000) " points="27.3008 26.4064 36.1136 35.2 44.9264 26.4064 47.6336 29.1136 36.1136 40.6336 24.5936 29.1136"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

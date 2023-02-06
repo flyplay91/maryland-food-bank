@@ -1,0 +1,4 @@
+name: maryland-food-bank-wordpress
+recipe: wordpress
+config:
+  webroot: .

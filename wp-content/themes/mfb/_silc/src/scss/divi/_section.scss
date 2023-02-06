@@ -1,0 +1,45 @@
+.et_pb_section { // selects all sections. Append specific sections with an &. selector
+	padding: 0;
+	margin: rem(0) rem(0) rem(20);
+	@include media ($mobile-break) {
+		margin: rem(0) rem(0) rem(40);
+	}
+	&.section {
+		&--meldtogether {
+			&-first {
+				padding-bottom: 0;
+			}
+			&-second {
+
+			}
+		}
+		&--text-pagedivider {
+			margin: 0;
+			padding: 0;
+			h2 {
+				font-size: rem( 72 );
+				text-align: center;
+			}
+			+ {
+				.section--splitbg {
+					margin-top: 0;
+				}
+			}
+			h3 {
+				font-size: rem( 50 );
+				text-align: center;
+			}
+		}
+	}
+}
+
+.et_section_regular {
+	padding: rem(0) rem($content-padding);
+	@include media($mobile-break) {
+		padding: rem(0) rem($content-padding-desktop);
+	}
+
+}
+.et_pb_fullwidth_section {
+	padding: rem(0);
+}

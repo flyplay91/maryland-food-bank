@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="37px" height="46px" viewBox="0 0 37 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Triangle</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Video-Module" transform="translate(-584.000000, -237.000000)" fill="#FFFFFF">
+            <g id="Video">
+                <polygon id="Triangle" transform="translate(602.500000, 260.000000) rotate(90.000000) translate(-602.500000, -260.000000) " points="602.5 242 625 278 580 278"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="38px" height="32px" viewBox="0 0 38 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Internals" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="0_3_0-HOMEPAGE_REF" transform="translate(-218.000000, -2633.000000)" fill="#54BDBA">
+            <g id="4---testimonials" transform="translate(-28.000000, 2096.000000)">
+                <g id="2" transform="translate(246.000000, 458.000000)">
+                    <g id="1-Quote" transform="translate(0.000000, 79.000000)">
+                        <path d="M15,5.81818182 C16.656,5.81818182 18,4.51490909 18,2.90909091 C18,1.30327273 16.656,0 15,0 C6.717,0 0,6.51345455 0,14.5454545 L0,26.1818182 C0,29.3963636 2.688,32 6,32 L12,32 C15.315,32 18,29.3963636 18,26.1818182 L18,20.3636364 C18,17.1490909 15.315,14.5454545 12,14.5454545 L6,14.5454545 C6,9.72509091 10.029,5.81818182 15,5.81818182 M32,14.5454545 L26,14.5454545 C26,9.72509091 30.029,5.81818182 35,5.81818182 C36.656,5.81818182 38,4.51490909 38,2.90909091 C38,1.30327273 36.656,0 35,0 C26.717,0 20,6.51345455 20,14.5454545 L20,26.1818182 C20,29.3963636 22.688,32 26,32 L32,32 C35.315,32 38,29.3963636 38,26.1818182 L38,20.3636364 C38,17.1490909 35.315,14.5454545 32,14.5454545" id="Icon"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,36 @@
+@mixin compartment() {
+
+
+
+	padding-left: rem(20);
+	padding-right: rem(20);
+	// &--interior {
+	//   max-width: 960px;
+	// }
+	@include media('800') {
+		padding-left: rem(52);
+		padding-right: rem(52);
+	}
+	&--inner {
+		margin: 0 auto;
+		max-width: $compartment-max-width;
+	}
+
+	// &--1200 {
+	// 	padding-left: 20px;
+	// 	padding-right: 20px;
+	// 	max-width: 1800px;
+	// 	margin: 0 auto;
+	// 	@include media ('800'){
+	// 		padding-left: 0;
+	// 		padding-right: 0;
+	// 	}
+	// }
+
+}
+.compartment {
+  @include compartment();
+  &--flex {
+    display: flex;
+  }
+}

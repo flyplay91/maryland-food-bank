@@ -1,0 +1,68 @@
+
+.et_pb_tabs {
+  border-radius: $border-radius;
+  box-shadow: $shadow-diffuse;
+  border: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  @include media($mobile-break) {
+    flex-direction: row;
+  }
+  &_controls {
+    background: $gray5;
+    @include media($mobile-break) {
+      // width: 100%;
+      max-width: rem(400);
+    }
+
+    li {
+      display: block;
+      height: auto;
+      width: 100%;
+      background: $gray5;
+      padding: rem(20) rem(10);
+      border: 0;
+      border-bottom: 2px solid $white;
+      &:last-child {
+        border-bottom: 0;
+      }
+      @include media($mobile-break) {
+        // min-width: 300px;
+      }
+      &:hover {
+        background: $gray6;
+      }
+
+      a {
+        border: 0;
+        color: $base-font-color;
+        font-weight: 700;
+        font-size: rem(20);
+        line-height: rem(28);
+        letter-spacing: -0.26;
+        display: block;
+        width: 100%;
+        @include media($mobile-break) {
+          text-align: center;
+          font-size: rem(20);
+          line-height: rem(28);
+          letter-spacing: -0.26;
+        }
+      }
+      &.et_pb_tab_active {
+        background: $red;
+        a {
+          color: $white !important;
+        }
+
+      }
+    }
+  }
+  .et_pb_all_tabs {
+    box-shadow: $shadow-diffuse-inner;
+    z-index: 11;
+    width: 100%;
+  }
+}
+

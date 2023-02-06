@@ -1,0 +1,76 @@
+.section--partner-logos {
+  @include media($mobile-break) {
+    margin-bottom: rem(70);
+  }
+  .slick-list {
+    width: 75%;
+    margin: 0 auto;
+    @include media($mobile-break) {
+      width: 86%;
+    }
+  }
+  .slick-slide {
+    height: 100%;
+    height: rem(140);
+    display: flex;
+    transition: transform 0.2s ease-in-out;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  .slide-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    img {
+      // max-width: 80%;
+    }
+    a {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .slick-prev,
+  .slick-next {
+    width: 44px;
+    height: 44px;
+    box-shadow: $shadow-diffuse;
+    border-radius: 50%;
+    color: $base-font-color;
+    transition: all 0.2s ease-in-out;
+    &:before {
+      @include icon();
+      color: $base-font-color;
+      opacity: 1;
+      font-size: rem(14);
+      @include media($mobile-break) {
+        font-size: rem(23);
+      }
+    }
+    &:hover {
+      background: $red;
+
+      &:before {
+        color: $white;
+      }
+    }
+    @include media($mobile-break) {
+      width: 68px;
+      height: 68px;
+    }
+  }
+  .slick-prev {
+    left: 0;
+    &:before {
+      content: "\e900";
+    }
+  }
+  .slick-next {
+    right: 0;
+    &:before {
+      content: "\e901";
+    }
+  }
+
+}

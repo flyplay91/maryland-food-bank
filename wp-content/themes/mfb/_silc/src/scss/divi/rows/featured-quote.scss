@@ -1,0 +1,230 @@
+.et_pb_row--featured-quote {
+  // margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  @include media ($mobile-break) {
+    flex-direction: row;
+    margin-bottom: rem(40);
+  }
+  .et_pb_image {
+    overflow: hidden;
+    border-radius: $border-radius;
+    position: relative;
+    cursor: pointer;
+    &:after {
+      transition: opacity 0.3s ease-in-out;
+      display: block;
+      position: relative;
+      background-image: linear-gradient(-180deg, rgba(0,0,0,0.00) 0%, #000000 100%);
+      margin-top: -150px;
+      height: 150px;
+      width: 100%;
+      content: '';
+      opacity: 0.79;
+      @include media($mobile-break) {
+        opacity: 0;
+      }
+    }
+    img {
+      transition: transform 0.3s ease-in-out;
+    }
+    .learn-more {
+      transition: opacity 0.3s ease-in-out;
+
+      z-index: 100;
+      color: $white;
+      position: absolute;
+      left: calc(50% - 60px);
+      bottom: 15px;
+      font-weight: 700; // 600
+      font-size: rem(15.16);
+      line-height: rem(21);
+      letter-spacing: -0.37px;
+      @include media($mobile-break) {
+        opacity: 0;
+        left: calc(50% - 100px);
+        bottom: 32px;
+        font-size: rem(26);
+        line-height: rem(36);
+        letter-spacing: -0.64px;
+      }
+      &:after {
+        @include icon();
+        color: $white;
+        content: "\e906";
+        line-height: 0;
+        margin-left: rem(19);
+        font-size: rem(13);
+        @include media($mobile-break) {
+          margin-left: rem(22);
+          font-size: rem(22);
+        }
+     }
+    }
+
+    &:hover {
+      &:after {
+        opacity: 0.79;
+      }
+      img {
+        transform: scale(1.05);
+      }
+      .learn-more {
+        opacity: 1;
+      }
+    }
+  }
+  .et_pb_column {
+    @include media($mobile-break) {
+      align-self: center;
+    }
+  }
+
+  .et_pb_text {
+    margin-bottom: rem(20);
+    @include media($mobile-break) {
+      margin-top: rem(20);
+    }
+  }
+
+  blockquote {
+    border-left: 0;
+    margin: 0;
+    position: relative;
+    padding-top: rem(46);
+    padding-left: rem(15);
+
+    &:before {
+      @include icon();
+      content: "\e909";
+      position: absolute;
+      top: 0;
+      color: $base-font-color;
+      font-size: rem(32);
+      left: rem(15);
+      @include media($mobile-break) {
+        // top: 75px;
+        // left: 80px;
+      }
+    }
+    @include media($mobile-break) {
+      padding-top: rem(52);
+      // padding-left: rem(80);
+    }
+    p {
+      margin-bottom: rem(13);
+      font-weight: 700;
+      font-size: rem(18);
+      line-height: rem(24);
+      @include media($mobile-break) {
+        font-weight: 700;
+        font-size: rem(32);
+        line-height: rem(42);
+      }
+    }
+    + p {
+      padding-left: rem(20);
+      margin-left: rem(17);
+      position: relative;
+      &:before {
+        content: "\2022";
+        color: $base-font-color;
+        font-size: rem( 32 );
+        display: block;
+        line-height: 0.5;
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include media($mobile-break) {
+          top: 6px;
+        }
+      }
+    }
+  }
+
+  &.et_pb_row {
+    width: 100%;
+    margin-bottom: rem(20);
+    // .et_pb_column_2_3 {
+    // 	order: -1;
+    // 	@include media ($mobile-break) {
+    // 		order: 0 !important;
+    // 	}
+    // }
+    &--flushright {
+      // margin-right: rem(-$content-padding);
+      max-width: 100% !important;
+      margin-right: 0;
+      @include media ($mobile-break) {
+        max-width: 89.8% !important;
+        margin-right: rem(-$content-padding-desktop);
+      }
+      .et_pb_text {
+        @include media($mobile-break) {
+          margin-right: rem(55);
+        }
+      }
+
+    }
+    &--flushleft {
+      // margin-left: rem(-$content-padding);
+      max-width: 100% !important;
+      margin-left: 0;
+      @include media ($mobile-break) {
+        max-width: 89.8% !important;
+        margin-left: rem(-$content-padding-desktop);
+      }
+
+      // Adjust ordering on mobile.
+      .et_pb_column_2_3 {
+        order: -1;
+        @include media ($mobile-break) {
+          order: 1;
+        }
+      }
+      .et_pb_text {
+        @include media($mobile-break) {
+          margin-left: rem(55);
+        }
+      }
+    }
+    &--style-green {
+      blockquote {
+        &:before {
+          color: $green;
+        }
+        + p {
+          &:before {
+            color: $green;
+          }
+        }
+      }
+    }
+    &--style-red {
+      blockquote {
+        &:before {
+          color: $red;
+        }
+        + p {
+          &:before {
+            color: $red;
+          }
+        }
+      }
+    }
+    &--style-yellow {
+      blockquote {
+        &:before {
+          color: $yellow;
+        }
+        + p {
+          &:before {
+            color: $yellow;
+          }
+        }
+      }
+    }
+  }
+
+}

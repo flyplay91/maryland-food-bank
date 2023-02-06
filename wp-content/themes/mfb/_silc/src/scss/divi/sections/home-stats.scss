@@ -1,0 +1,14 @@
+.section--home-stats {
+  margin-bottom: 0;
+  @include media($mobile-break) {
+    margin-bottom: rem(70);
+  }
+  .et_pb_row {
+    margin-top: rem(0);
+    padding-top: rem(0);
+    padding-bottom: rem(0);
+    @include media($mobile-break) {
+      max-width: rem(880);
+    }
+  }
+}

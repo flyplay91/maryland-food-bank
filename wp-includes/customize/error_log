@@ -1,0 +1,20 @@
+[31-Jul-2020 07:53:37 UTC] PHP Fatal error:  Uncaught Error: Class 'WP_Customize_Control' not found in /home/mfb/public_html/wp-includes/customize/class-wp-widget-form-customize-control.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/mfb/public_html/wp-includes/customize/class-wp-widget-form-customize-control.php on line 17
+[31-Jul-2020 07:53:38 UTC] PHP Fatal error:  Uncaught Error: Class 'WP_Customize_Control' not found in /home/mfb/public_html/wp-includes/customize/class-wp-widget-form-customize-control.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/mfb/public_html/wp-includes/customize/class-wp-widget-form-customize-control.php on line 17
+[31-Jul-2020 07:54:07 UTC] PHP Fatal error:  Uncaught Error: Class 'WP_Customize_Control' not found in /home/mfb/public_html/wp-includes/customize/class-wp-widget-form-customize-control.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/mfb/public_html/wp-includes/customize/class-wp-widget-form-customize-control.php on line 17
+[01-Aug-2020 08:01:41 UTC] PHP Fatal error:  Uncaught Error: Class 'WP_Customize_Control' not found in /home/mfb/public_html/wp-includes/customize/class-wp-customize-theme-control.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/mfb/public_html/wp-includes/customize/class-wp-customize-theme-control.php on line 17
+[01-Aug-2020 08:02:14 UTC] PHP Fatal error:  Uncaught Error: Class 'WP_Customize_Control' not found in /home/mfb/public_html/wp-includes/customize/class-wp-customize-theme-control.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/mfb/public_html/wp-includes/customize/class-wp-customize-theme-control.php on line 17

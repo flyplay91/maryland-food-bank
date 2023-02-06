@@ -1,0 +1,235 @@
+// Find Food page override.
+#post-23253 {
+	.et_builder_inner_content {
+		display: flex;
+		flex-direction: column;
+		.et_pb_section_1 {
+			order: -1;
+		}
+		@include media($mobile-break) {
+			.et_pb_section_1 {
+				order: 1;
+			}
+
+		}
+	}
+}
+
+.section--find-food {
+  padding: 0;
+  margin: 0;
+  @include media($mobile-break) {
+
+  }
+  .et_pb_row {
+    padding-top: 0;
+    max-width: 100% !important;
+  }
+  .gmw-form-wrapper {
+    max-width: $compartment-max-width;
+    margin: 0 auto;
+    @include media($mobile-break) {
+      padding: 0 rem($content-padding-desktop);
+
+    }
+
+    form {
+      background: $base-font-color;
+
+      box-shadow: 0 5px 10px 0 rgba(0,0,0,0.20);
+      margin: rem(0);
+      padding: rem(30);
+      display: flex;
+      flex-direction: column;
+      @include media($mobile-break) {
+        border-radius: $border-radius;
+        padding: rem(30);
+        margin: rem(0) rem(0) rem(50) rem(0);
+        flex-direction: row;
+      }
+      .gmw-address-field-wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding-bottom: rem(15);
+        @include media($mobile-break) {
+          padding-right: rem(20);
+        }
+        label {
+          @include form-label-alt($white);
+        }
+        .gmw-address {
+          @include form-input-alt($gray4, $white);
+        }
+      }
+      .gmw-unit-distance-wrapper {
+        display: flex;
+        align-self: flex-end;
+        width: 100%;
+        padding-bottom: rem(15);
+        @include media($mobile-break) {
+          width: rem(270);
+          padding-right: rem(20);
+        }
+        label {
+          @include form-label-alt($white);
+        }
+        .gmw-radius-dropdown-wrapper {
+          width: 100%;
+        }
+        select {
+          @include form-select-alt($gray4, $white);
+        }
+      }
+      .gmw-submit-wrapper,
+      .gmw-submit-field-wrapper {
+        display: flex;
+        align-self: flex-end;
+        padding-bottom: rem(15);
+        width: 100%;
+        @include media($mobile-break) {
+          width: rem(168);
+        }
+        .gmw-submit {
+          @include form-button-alt($white, $red, $base-font-color, $white);
+        }
+      }
+    }
+  }
+
+  .gmw-pt-pagination-wrapper {
+
+  }
+  #need-food-returns {
+
+  }
+  .gmw-directions-link {
+    a {
+      @include button($yellow, $base-font-color);
+    }
+  }
+  .map-overlay {
+    z-index: 1000;
+    background:transparent;
+    position:relative;
+    width:100%;
+    height:550px; /* your iframe height */
+    top:550px;  /* your iframe height */
+    margin-top:-550px;  /* your iframe height */
+ }
+ .gmw-driving-distance {
+   font-weight: 700;
+   font-size: rem(16);
+   line-height: rem(15);
+   letter-spacing: -0.27px;
+   margin-bottom: rem(20);
+ }
+  .gmw-results-list {
+    padding: rem(30);
+    @include media($mobile-break) {
+      display: none;
+    }
+    .address {
+      margin-bottom: rem(20);
+      h3 {
+        margin-bottom: rem(15);
+      }
+    }
+  }
+  .gmw-results-table {
+    display: none;
+    @include media($mobile-break) {
+      display: block;
+    }
+    table {
+      border: 0;
+      border-collapse: collapse;
+      width: 100%;
+      border-bottom: 1px solid #E4E4E4;
+      thead {
+        background: $base-font-color;
+        th {
+          color: $white;
+          font-size: rem(20);
+          line-height: rem(23.85);
+          letter-spacing: -0.26px;
+          padding: rem(20);
+          border: 0;
+
+        }
+      }
+      tbody {
+        tr {
+          &:nth-child(odd) {
+            background: $content-header-bg;
+          }
+        }
+        td {
+          border: 0;
+          padding: rem(20);
+          &:first-child, &:last-child {
+            width: 5%;
+          }
+          &.result-name {
+            width: 30%;
+          }
+          &.result-address {
+            width: 20%;
+          }
+          &.result-hours {
+            width: 20%;
+          }
+          &.result-details {
+            width: 20%;
+          }
+        }
+      }
+    }
+  }
+  .gmw-pt-pagination-wrapper {
+    margin: rem(60) auto rem(30);
+    text-align: center;
+  }
+	.gmw-pagination {
+		@include list-reset();
+		display: inline-block;
+		margin: 0 auto;
+		text-align: center;
+
+		border-radius: $border-radius;
+		overflow: hidden;
+		li {
+			display: inline-block;
+
+			.page-numbers {
+				background: $white;
+				border-top: 1px solid #D4D8DE;
+				border-bottom: 1px solid #D4D8DE;
+				display: inline-block;
+				color: $base-font-color;
+				font-weight: 700;
+				font-size: rem(14);
+				line-height: rem(21);
+				text-decoration: none;
+				padding: rem(20);
+				transition: all 0.2s ease-in-out;
+				&:hover {
+					background: #D4D8DE;
+				}
+				&.current {
+					background: $base-font-color;
+					color: $white
+				}
+				&.prev, &.next {
+					background: #D4D8DE;
+					&:hover {
+						background: $yellow;
+					}
+				}
+			}
+
+
+		}
+
+	}
+}

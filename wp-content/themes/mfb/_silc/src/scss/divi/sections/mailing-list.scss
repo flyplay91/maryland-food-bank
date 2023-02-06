@@ -1,0 +1,123 @@
+.section--mailing-list-signup {
+  background: $orange;
+  color: $white;
+  margin-bottom: 0;
+  .et_pb_image {
+    margin-bottom: rem(20);
+  }
+  .et_pb_image_wrap {
+    text-align: center;
+    img {
+      width: rem(63);
+    }
+  }
+  .et_pb_text_inner {
+    h2 {
+      color: $white;
+      font-style: $sans-serif-alt;
+      font-weight: 700;
+      font-size: rem(22);
+      line-height: rem(30);
+      letter-spacing: 0;
+      @include media($mobile-break) {
+
+      }
+    }
+    p {
+      color: $white;
+      // font-size: rem( 19 );
+      // line-height: 1.5;
+    }
+  }
+
+  .gform_wrapper {
+    form {
+      display: flex;
+      flex-direction: column;
+      @include media($mobile-break) {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+  .gform_fields {
+
+    display: flex;
+    flex-direction: column;
+    @include media($mobile-break) {
+      flex-direction: row;
+    }
+    @include list-reset();
+    li {
+      list-style-type: none;
+    }
+
+    .gfield {
+      margin-bottom: rem(7);
+      @include media($mobile-break) {
+        margin-right: rem(7);
+      }
+      label {
+        display: none;
+      }
+      input {
+        border-radius: $border-radius;
+        border-width: 0 !important;
+        padding: rem(12) rem(20);
+        background: $orange-dark;
+        width: 100%;
+        color: $white;
+        font-weight: 700;
+        font-size: rem(16);
+        line-height: rem(25);
+        &::placeholder {
+          opacity: 0.8;
+          color: $white;
+        }
+      }
+    }
+  }
+  .validation_error {
+    width: 100%;
+    margin-bottom: rem(10);
+    color: $base-font-color;
+    font-weight: 700;
+    font-size: rem(14);
+  }
+  .validation_message {
+    // display: none;
+    margin-top: rem(10);
+    color: $base-font-color;
+    font-weight: 700;
+    font-size: rem(14);
+  }
+  .gform_body {
+    width: 100%;
+    @include media($mobile-break) {
+      width: 75%;
+    }
+  }
+  .gform_footer {
+    width: 100%;
+    @include media($mobile-break) {
+      width: 25%;
+    }
+  }
+  .gform_button {
+    background: $white;
+    border-radius: 14px;
+    font-weight: 700;
+    color: $base-font-color;
+    letter-spacing: 0.2px;
+    font-size: rem(16);
+    line-height: rem(24);
+    width: 100%;
+    text-align: center;
+    padding: rem(12) rem(20);
+    @include media($mobile-break) {
+
+    }
+  }
+
+}

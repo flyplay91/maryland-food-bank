@@ -1,0 +1,17 @@
+<?php
+add_action( 'gform_confirmation', 'szbl_gform_confirmation', 999, 4 );
+function szbl_gform_confirmation( $confirmation, $form, $entry, $ajax )
+{
+	$find = array( ',', '%24', '%2C' );
+	
+	if ( is_array( $confirmation ) && isset( $confirmation['redirect'] ) )
+	{
+		$confirmation['redirect'] = str_replace( $find, '', $confirmation['redirect'] );
+	}
+	elseif ( is_string( $confirmation ) )
+	{
+		$confirmation = str_replace( $find, '', $confirmation );
+	}
+
+	return $confirmation;
+}

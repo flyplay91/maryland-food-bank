@@ -1,0 +1,155 @@
+// outweigh all the things
+body.et-pb-theme-maryland.food.bank #et-boc {
+@import "~silc-grid/src/scss/index";
+@import "styles";
+@import "section";
+@import "row";
+
+@import "forms";
+@import "cta";
+@import "slick";
+@import "tabs-vertical";
+@import "tabs";
+@import "video";
+
+@import "sections/header";
+@import "sections/home-ctas";
+@import "sections/home-stats";
+@import "sections/home-quotes";
+@import "sections/hero";
+@import "sections/counter-with-stats";
+@import "sections/latest-news";
+@import "sections/video-with-caption";
+@import "sections/mailing-list";
+@import "sections/partner-logos";
+
+@import "rows/featured-quote";
+
+@import "modules/accordion";
+@import "modules/events";
+@import "modules/icon-with-text";
+
+	.et_pb_row {
+		max-width: $compartment-max-width;
+		z-index: 0;
+	}
+
+
+
+	@include buttons();
+
+
+	.et_pb_button {
+		@include button($yellow, $base-font-color);
+	}
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: 700;
+	}
+	a {
+		color: $red;
+		font-weight: 700;
+	}
+	ol {
+		padding: 0;
+		margin-left: rem(58);
+		li {
+			position: relative;
+			margin: rem(30) rem(0);
+			font-weight: 500;
+			padding-left: rem(10);
+			font-size: rem(14);
+  		line-height: rem(20);
+			@include media('800') {
+				font-size: rem(18);
+				line-height: rem(30);
+			}
+			ul {
+				padding: 0;
+			}
+		}
+	}
+	.fancy-list {
+		list-style-type: none;
+		// margin: 0 rem(20);
+		padding: 0;
+		margin-left: rem(40);
+		li {
+			position: relative;
+			list-style: none;
+			margin: rem(30) rem(0);
+			font-weight: 500;
+			padding-left: rem(20);
+			font-size: rem(14);
+			line-height: rem(20);
+			@include media('800') {
+				font-size: rem(18);
+				line-height: rem(30);
+			}
+			&:before {
+				content: "\2022";
+				color: $red;
+				font-size: rem(26);
+				display: block;
+				// line-height: 0.5;
+				position: absolute;
+				top: -1px;
+				left: 0;
+				@include media($mobile-break) {
+					font-size: rem(26);
+					top: -2px;
+				}
+			}
+			ul {
+				padding: 0;
+				margin-left: rem(40);
+			}
+			// Add some depth
+			li:before {
+				color: $yellow;
+			}
+			li li:before {
+				color: $red;
+			}
+			li li li:before {
+				color: $yellow;
+			}
+			ul li li li:before {
+				color: $red;
+			}
+			ul li li li li:before {
+				color: $yellow;
+			}
+		}
+	}
+
+	.tag {
+		padding: rem(7) rem(22);
+		background: $gray7;
+		border-radius: 4px;
+		font-weight: 700; // 600
+		font-size: rem(14);
+		color: $base-font-color;
+		text-align: center;
+		line-height: rem(24);
+		text-transform: uppercase;
+		margin-right: rem(10);
+		margin-bottom: rem(10);
+	}
+
+	.fancy-link {
+		font-weight: 700;
+		font-size: rem(14);
+		line-height: rem(20);
+		@include media($mobile-break) {
+			font-size: rem(18);
+			line-height: rem(25);
+		}
+		&:after {
+			@include icon();
+			content: "\e906";
+			font-size: rem(14);
+			margin-left: rem(6);
+		}
+	}
+
+}

@@ -1,0 +1,2928 @@
+/*
+Theme Name:     Maryland Food Bank
+Theme URI:      http://www.mdfoodbank.org/
+Description:    Maryland Food Bank ConnectionFramework Theme
+Author:         WebConnection
+Author URI:     http://www.webconnection.com/
+Template:       connection-framework
+Version:        0.1.0
+*/
+
+@import url("../connection-framework/style.css");
+
+/*=================================================================
+HTML
+=================================================================*/
+body,td,th,input,textarea,select{
+	font: 12px/1.6 open_sansregular, Arial, Helvetica, sans-serif;
+	color: #424242;
+}
+body {
+	margin: 0;
+	padding: 0;
+	background: #FFFFFF url(./img/framework/backgrounds/content-noise.gif) repeat 0px 0px;
+}
+a{
+    outline-style: none !important;
+	color: #ef3124;
+}
+a:link, a:visited{
+	text-decoration: none;
+}
+a:hover, a:active{
+	text-decoration: underline;
+	cursor: pointer;
+}
+img{
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+strong, bold{
+	font-weight: normal;
+}
+em, i{
+	font-style: normal;
+}
+h1, h2, h3, h4, h5, h6, h7{
+	font-weight: normal;
+	margin: 0;
+	padding: 0;
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+figure figcaption {
+	font-family: open_sansitalic;
+	font-size: 11px;
+	color: #7b6e65;
+	line-height: 1.25em;
+	padding: 4px 0;
+	text-align: left;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+
+ul li {
+	padding-left: 14px;
+}
+
+ul.ul-right-arrow li {
+	/*Old Image
+	background-image: url(./img/framework/list-bullet.png);*/
+
+	background-image: url(./img/framework/bullet-sidebar-noshadow.png);
+	background-repeat: no-repeat;
+	background-position: 0px 5px;
+}
+
+.gform_fields li {
+	padding-left: 0;
+}
+
+/*-----------------------------------------------------------------
+PDF Links
+-----------------------------------------------------------------*/
+.pdf-link{
+	display: inline-block;
+	padding: 0 0 0 37px;
+	min-height: 30px;
+	background: url(./img/framework/icons/pdf-link.png) no-repeat 0px 3px;
+}
+
+/*-----------------------------------------------------------------
+Validation on all forms
+-----------------------------------------------------------------*/
+.validation_error{
+	border: 3px solid #e5301f;
+	padding: .5em .75em .75em .75em;
+	background: #f9f9f9;
+	margin-bottom: 1em;
+	border-radius: 10px;
+}
+.gfield_error .input-overlay{
+	border-color: #e5301f !important;
+}
+
+/*Submit buttons*/
+.gform_button{
+	font: normal 18px/1 "open_sansbold";
+	text-transform: uppercase;
+	padding: 5px 10px;
+	-moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+	-webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+	border-radius: 20px;
+	border: 1px solid #e5e5e5;
+	color: #FFF;
+	border-color: #e5e5e5;
+	background: #ee3124;
+	background: -moz-linear-gradient(top,  #ee3124 0%, #e12e22 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ee3124), color-stop(100%,#e12e22));
+	background: -webkit-linear-gradient(top,  #ee3124 0%,#e12e22 100%);
+	background: -o-linear-gradient(top,  #ee3124 0%,#e12e22 100%);
+	background: -ms-linear-gradient(top,  #ee3124 0%,#e12e22 100%);
+	background: linear-gradient(to bottom,  #ee3124 0%,#e12e22 100%);
+	//filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ee3124', endColorstr='#e12e22',GradientType=0 );
+	text-shadow: 0px 1px 0px #891c14;
+	width: 75%;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0 auto 8px auto;
+	display: block;
+}
+.gform_button:hover,
+.gform_button:active{
+	background: #e12e22;
+	background: -moz-linear-gradient(top,  #e12e22 22%, #ee3124 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(22%,#e12e22), color-stop(100%,#ee3124));
+	background: -webkit-linear-gradient(top,  #e12e22 22%,#ee3124 100%);
+	background: -o-linear-gradient(top,  #e12e22 22%,#ee3124 100%);
+	background: -ms-linear-gradient(top,  #e12e22 22%,#ee3124 100%);
+	background: linear-gradient(to bottom,  #e12e22 22%,#ee3124 100%);
+	//filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e12e22', endColorstr='#ee3124',GradientType=0 );
+	text-shadow: 0px -1px 0px #891c14;
+}
+
+/*=================================================================
+Mobile Side Menu
+=================================================================*/
+/*button that activates side menu*/
+#menu-button{
+	float: right;
+	display: none;
+	padding-top:8px;
+}
+
+/*side menu*/
+#mobile-side-menu{
+	width: 0px;
+	float: left;
+	overflow: hidden;
+	position: relative;
+	padding: 0;
+	margin: 0 0 0 -1px;
+	border-right: 1px solid #4b4b4b;
+	background: #242424;
+	z-index: 450;
+}
+/*Width of menu via js is 250px*/
+#mobile-side-menu .content{
+	width:  250px;
+	padding: 5px 0 0 0;
+	overflow: auto;
+}
+/*Close button*/
+#mobile-side-menu #menu-button-close{
+	width: 15px;
+	height: 15px;
+	margin: 0 5px 0 auto;
+	overflow: hidden;
+}
+#mobile-side-menu #menu-button-close a,
+#mobile-side-menu #menu-button-close a:hover,
+#mobile-side-menu #menu-button-close a:active{
+	width: 15px;
+	height: 15px;
+	overflow: hidden;
+	display: block;
+	text-decoration: none;
+	background: transparent url(./img/framework/menu-close.png) no-repeat 0px 0px;
+}
+/*Logo*/
+#mobile-side-menu .logo{
+	margin: 0 0 20px 20px;
+	width: 124px;
+	height: 45px;
+	background: transparent url(./img/framework/menu-logo.png) no-repeat 0px 0px;
+}
+/*Navigation*/
+#mobile-side-menu .content nav ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	border-bottom: 1px solid #4b4b4b;
+}
+#mobile-side-menu .content nav ul li{
+	border-top: 1px solid #4b4b4b;
+	padding: 0;
+	margin: 0;
+}
+#mobile-side-menu .content nav ul li a{
+	display: block;
+	padding: 5px 10px;
+	color: #fdc057;
+	font-size: 16px;
+	text-transform: uppercase;
+}
+#mobile-side-menu .content nav ul li a:hover,
+#mobile-side-menu .content nav ul li a:active{
+	text-decoration: none;
+	background: #3a3a3a;
+}
+/*=================================================================
+Divider
+=================================================================*/
+.content-divider{
+	display: block;
+	height: 1px;
+	background: #bfbfbf;
+	overflow: hidden;
+}
+.mobile{
+	display: none;
+}
+
+/*=================================================================
+Framework
+=================================================================*/
+/*-----------------------------------------------------------------
+Masthead Navigation - backgrounds and logo
+-----------------------------------------------------------------*/
+#masthead{
+	background: url(./img/framework/backgrounds/header-tile.gif) repeat-x 0px 0px;
+}
+#framework-logo .tile{
+	background: url(./img/framework/backgrounds/header-logo-tile.gif) repeat-x 0px 0px;
+}
+#framework-logo .tile .lt{
+	background: url(./img/framework/backgrounds/header-logo-lt.gif) no-repeat left bottom;
+}
+#framework-logo .tile .rt{
+	background: url(./img/framework/backgrounds/header-logo-rt.gif) no-repeat right bottom;
+	height: 92px;
+	padding: 0 35px;
+}
+#framework-logo .logo{
+	padding-top: 26px;
+}
+/*-----------------------------------------------------------------
+Masthead Navigation - common elements for all nav's
+-----------------------------------------------------------------*/
+#masthead nav ul{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	z-index: 200;
+	overflow: hidden;
+}
+#masthead nav li{
+	float: left;
+	padding: 0;
+	margin: 0;
+	background: none;
+}
+#masthead nav li:hover{
+	position:static;
+}
+#masthead nav li:hover > ul{
+	left: auto;
+}
+#masthead nav li a{
+	display: block;
+	position: relative;
+}
+#masthead nav ul ul{
+	position: absolute;
+	left: -999em;
+}
+#masthead nav li li{
+	float: none;
+	margin: 0;
+}
+
+#masthead nav li li ul{
+	margin: -43px 0 0 174px;
+}
+
+#masthead nav li:hover ul ul{
+	left: -999em;
+}
+#masthead nav li:hover ul,
+#masthead nav li li:hover ul{
+	left: auto;
+}
+/*Top arrows in subnavs*/
+#masthead nav div.nav-div{
+	width: 100%;
+	background-color: transparent;
+	background-position: 17px bottom;
+	background-repeat: no-repeat;
+	display: none;
+	position: absolute;
+	z-index: 700;
+}
+#masthead nav li.sublink:hover div.nav-div,
+#masthead nav li.sublink:active div.nav-di{
+	display: block;
+}
+
+/*---------------------------------------------------------------
+Site Search
+---------------------------------------------------------------*/
+#nav-and-search{
+	margin-top: 16px;
+	position: relative;
+}
+#site-search{
+	float: right;
+	margin: 3px 0 0 5px;
+	position: relative;
+}
+#site-search .icon a{
+	width: 18px;
+	height: 18px;
+	overflow: hidden;
+	text-indent: -999em;
+	background: url(./img/framework/icons/search.png) no-repeat 0px 0px;
+	display: block;
+}
+#site-search .search-box{
+	display: none;
+}
+#site-search .search-box .arrow{
+	position: absolute;
+	top: 17px;
+	left: 3px;
+	background: url(./img/framework/backgrounds/search-box-arrow.png) no-repeat 0px 0px;
+	width: 12px;
+	height: 6px;
+	z-index: 451;
+}
+/*
+#site-search:hover .search-box{
+	display: block;
+}
+*/
+#site-search .search-box.active {
+	display: block;
+}
+#site-search .search-box form{
+	position: absolute;
+	top: 22px;
+	left: -200px;
+	z-index: 450;
+	width: 200px;
+	border: 1px solid #d1d1d1;
+	background: #95b03c;
+	padding: 10px;
+	margin: 0;
+	border-radius: 5px;
+}
+
+
+#site-search .search-box form ul{
+	-moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow:2px 2px 4px rgba(0, 0, 0, 0.2);
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+	border-radius: 20px;
+	border: 1px solid #e3e3e1;
+	background: #fff;
+}
+
+/*Form - css to put labels behind form fields*/
+#site-search .search-box form .input-overlay {
+	margin: 0 0 3px 0;
+	float: left;
+	clear: both;
+	width: 100%;
+}
+#site-search .search-box form .input-overlay span {
+	position: absolute;
+	padding: 2px 0 0 2px;
+	margin-left: 2px;
+	color: #7b6e65;
+}
+#site-search .search-box form .input-overlay input{
+	position: relative;
+	margin: 0;
+	padding: 2px 0 0 2px;
+	background: transparent;
+	font: inherit;
+	font-weight: normal;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 173px;
+	display: block;
+	border: none;
+	color: #7b6e65;
+	line-height: 1;
+}
+
+#site-search .search-box form button{
+	display: block;
+	background: #ef3124 url(./img/framework/icons/search-icon-for-button.png) no-repeat center center;
+	padding: 2px 2px 3px 2px;
+	overflow: hidden;
+	text-indent: -999em;
+	width: 25px;
+	height: 22px;
+	border: none;
+	margin: 0;
+	padding: 0;
+	-moz-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.5);
+}
+#site-search .search-box form button:hover,
+#site-search .search-box form button:active{
+	background-color: #55bdba;
+	cursor: pointer;
+}
+
+/*-----------------------------------------------------------------
+Masthead Navigation - Top Nav
+-----------------------------------------------------------------*/
+#top-nav{
+	overflow: hidden;
+	float: right;
+}
+#top-nav > ul{
+	float: right;
+}
+#top-nav ul li{
+	margin: 3px 8px;
+}
+#top-nav li a{
+	font-size: 11px;
+	color: #7b6e65;
+}
+#top-nav li:hover > a{
+	color: #f26b29;
+	text-decoration: none;
+}
+#top-nav li.sublink > a span{
+	display: block;
+	padding-right: 15px;
+	background: url(./img/framework/backgrounds/top-nav-arrows.png) no-repeat right -74px;
+}
+#top-nav li.sublink:hover > a span,
+#top-nav li.sublink:active > a span{
+	background-position: right 3px;
+}
+/*Sublinks*/
+#top-nav li ul{
+	background: #ffffff;
+	background: -moz-linear-gradient(top,  #ffffff 0%, #f0f0f0 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#f0f0f0));
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#f0f0f0 100%);
+	background: -o-linear-gradient(top,  #ffffff 0%,#f0f0f0 100%);
+	background: -ms-linear-gradient(top,  #ffffff 0%,#f0f0f0 100%);
+	background: linear-gradient(to bottom,  #ffffff 0%,#f0f0f0 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f0f0f0',GradientType=0 );
+	padding: 0px;
+	border-radius: 5px;
+	border: 1px solid #d1d1d1;
+	margin-top: 5px;
+}
+
+#top-nav li li a{
+	color: #7b6e65;
+	text-shadow: 1px 1px 0px #fff;
+	margin: 0;
+	padding: 0 10px;
+	min-width: 100px;
+	max-width: 200px;
+}
+#top-nav li li:hover a,
+#top-nav li li:active a{
+	color: #f26b29;
+	background: #f2f2f2;
+}
+#top-nav li li a span{
+	border-top-color: #fff;
+	border-bottom-color: #d1d1d1;
+	display: block;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #d1d1d1;
+	padding: 4px 6px;
+}
+#top-nav li li.first-link a span{
+	border-top: none;
+}
+#top-nav li li.last-link a span{
+	border-bottom: none;
+}
+
+/*Top arrows in subnavs*/
+#top-nav div.nav-div{
+	background-image:url(./img/framework/backgrounds/subnav-arrow-top-nav.png);
+	height: 6px;
+}
+/*-----------------------------------------------------------------
+Masthead Navigation - Main Nav
+-----------------------------------------------------------------*/
+#main-nav{
+	overflow: hidden;
+	margin-top: 12px;
+	padding: 0 5px 5px 0;
+}
+#main-nav > ul{
+	float: right;
+	-moz-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow:2px 2px 3px rgba(0, 0, 0, 0.15);
+	box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.15);
+	border-radius: 20px;
+}
+#main-nav ul li{
+	border: 1px solid #d1d1d1;
+	border-right: none;
+	background: #ffffff; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ffffff 0%, #f0f0f0 96%, #e7e7e7 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(96%,#f0f0f0), color-stop(100%,#e7e7e7));
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#f0f0f0 96%,#e7e7e7 100%);
+	background: -o-linear-gradient(top,  #ffffff 0%,#f0f0f0 96%,#e7e7e7 100%);
+	background: -ms-linear-gradient(top,  #ffffff 0%,#f0f0f0 96%,#e7e7e7 100%);
+	background: linear-gradient(to bottom,  #ffffff 0%,#f0f0f0 96%,#e7e7e7 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e7e7e7',GradientType=0 );
+}
+#main-nav ul li.first-link{
+	border-radius: 20px 0 0 20px;
+}
+#main-nav ul li.last-link{
+	border-radius: 0 20px 20px 0;
+	border: 1px solid #d1d1d1;
+}
+#main-nav ul li:hover,
+#main-nav ul li:active{
+	background: #f26b29;
+	background: -moz-linear-gradient(top,  #f26b29 0%, #e46527 96%, #db6125 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f26b29), color-stop(96%,#e46527), color-stop(100%,#db6125));
+	background: -webkit-linear-gradient(top,  #f26b29 0%,#e46527 96%,#db6125 100%);
+	background: -o-linear-gradient(top,  #f26b29 0%,#e46527 96%,#db6125 100%);
+	background: -ms-linear-gradient(top,  #f26b29 0%,#e46527 96%,#db6125 100%);
+	background: linear-gradient(to bottom,  #f26b29 0%,#e46527 96%,#db6125 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f26b29', endColorstr='#db6125',GradientType=0 );
+	border-color: #d9591a;
+}
+#main-nav ul li a{
+	padding: 3px 10px;
+	font-family: open_sansbold;
+	color: #7b6e65;
+	text-transform: uppercase;
+	font-size: 12px;
+	text-shadow: 1px 1px 0px #fff;
+}
+#main-nav ul li:hover a,
+#main-nav ul li:active a{
+	color: #6b2401;
+	text-shadow: 1px 1px 0px #ff7a38;
+}
+#main-nav ul li a:hover,
+#main-nav ul li a:active{
+	text-decoration: none;
+}
+
+/*links w/ submenus*/
+#main-nav li.sublink > a span{
+	display: block;
+	padding-right: 10px;
+	background: url(./img/framework/backgrounds/main-nav-arrows.png) no-repeat right 7px;
+}
+#main-nav li.sublink:hover > a span,
+#main-nav li.sublink:active > a span{
+	background-position: right -75px;
+}
+
+/*Sub nav*/
+#main-nav ul ul{
+	background: #f26b29;
+	border: 1px solid #d9591a;
+	border-radius: 5px;
+	padding: 0px;
+	margin-top: 7px;
+}
+#main-nav ul ul li,
+#main-nav ul ul li:hover,
+#main-nav ul ul li:active{
+	background: transparent;
+	filter: none;
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+#main-nav li li a{
+	font-family: open_sansregular;
+	text-transform: none;
+	color: #4c1901;
+	text-shadow: 1px 1px 0px #ff7a38;
+	margin: 0 !important;
+	padding: 0 10px !important;
+	display: block;
+	min-width: 100px;
+	max-width: 150px;
+}
+#main-nav li li:hover a,
+#main-nav li li:active a{
+	color: #fff;
+	background: #d85514;
+	text-shadow: 1px 1px 0px #6b2401;
+}
+#main-nav li li a span{
+	display: block;
+	border-bottom: 1px solid #d9591a;
+	border-top: 1px solid #ff7a38;
+	padding: 4px 6px;
+}
+#main-nav li li.first-link a span{
+	border-top: none;
+}
+#main-nav ul li.sublink li.last-link{
+	border-radius: 0;
+	border: none;
+}
+#main-nav ul li li.last-link a span{
+	border-bottom: none;
+}
+
+
+/*emphasis link*/
+#main-nav ul li.emphasis{
+	background: #ee3124;
+	background: -moz-linear-gradient(top,  #ee3124 0%, #e12e22 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ee3124), color-stop(100%,#e12e22));
+	background: -webkit-linear-gradient(top,  #ee3124 0%,#e12e22 100%);
+	background: -o-linear-gradient(top,  #ee3124 0%,#e12e22 100%);
+	background: -ms-linear-gradient(top,  #ee3124 0%,#e12e22 100%);
+	background: linear-gradient(to bottom,  #ee3124 0%,#e12e22 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ee3124', endColorstr='#e12e22',GradientType=0 );
+}
+#main-nav ul li.emphasis:hover,
+#main-nav ul li.emphasis:active{
+	background: #55bdba;
+	background: -moz-linear-gradient(top,  #55bdba 0%, #50b3b0 96%, #5db2af 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#55bdba), color-stop(96%,#50b3b0), color-stop(100%,#5db2af));
+	background: -webkit-linear-gradient(top,  #55bdba 0%,#50b3b0 96%,#5db2af 100%);* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #55bdba 0%,#50b3b0 96%,#5db2af 100%);
+	background: -ms-linear-gradient(top,  #55bdba 0%,#50b3b0 96%,#5db2af 100%);
+	background: linear-gradient(to bottom,  #55bdba 0%,#50b3b0 96%,#5db2af 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#55bdba', endColorstr='#5db2af',GradientType=0 );
+	border-color: #369794;
+}
+
+#main-nav ul li.emphasis a{
+	color: #fff;
+	text-shadow: 1px 1px 0px #891c14;
+}
+#main-nav ul li.emphasis:hover a,
+#main-nav ul li.emphasis:active a{
+	color: #fff;
+	text-shadow: 1px 1px 0px #1d807c;
+}
+
+/*Top arrows in subnavs*/
+#main-nav div.nav-div{
+	background-image:url(./img/framework/backgrounds/subnav-arrow-main-nav.png);
+	height: 8px;
+	background-color:#0C3;
+}
+/*---------------------------------------------------------------
+Content
+---------------------------------------------------------------*/
+#content{
+	border-top: 1px solid #fff;
+}
+#page-id{
+	padding-top: 10px;
+}
+#breadcrumb{
+	border-top: 1px solid #fff;
+	padding: 7px 0;
+}
+#breadcrumb .divider{
+	display: inline-block;
+	margin: 0 1em;
+}
+/*callouts*/
+.bg-yellow-stripes.callouts aside{
+	padding: 15px 10px 2em 10px;
+	background: url(./img/framework/backgrounds/callout-top-gradient.png) repeat-x 0px 0px;
+}
+
+.yellow-background{
+	background-color: #fdc057;
+	padding: 1em;
+	border-radius: 5px;
+}
+
+/*  Gray content callout */
+.gray-bg-texture {
+	background: #d7d3d1 url("./img/framework/backgrounds/gray-striped-bg.gif") repeat-x 0px 0px;
+	padding: 18px 5px;
+}
+
+.gray-bg-texture a:hover {
+	text-decoration: none;
+}
+
+a#youtube-banner{
+	display: block;
+	width: 100%;
+	background: #fff;
+	border: 1px solid #d6d6d6;
+	padding: 2px;
+	font-size: 11px;
+}
+a#youtube-banner:hover,
+a#youtube-banner:active{
+	text-decoration: none;
+}
+#youtube-banner .bg-texture{
+	background: #d7d3d1 url(./img/framework/backgrounds/youtube-banner-bg.gif) repeat-x 0px 0px;
+	padding: 18px 5px;
+	text-align: center;
+}
+/*spacing*/
+#youtube-banner strong,
+#youtube-banner .black-links{
+	margin: 18px 0;
+}
+/*Red button*/
+#youtube-banner .red-button{
+	font-size: 12px;
+}
+
+
+/*Youtube Videos*/
+.youtube-video iframe{
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+/*yellow bullets*/
+ul.yellow-bullets{
+	color: #f26b29;
+}
+ul.yellow-bullets li span{
+	color: #424242;
+}
+
+/*Border radius*/
+.border-radius{
+	border-radius: 5px;
+}
+
+/*Content Accordions*/
+/* Interaction states
+----------------------------------*/
+.content-accordion{
+	border-top: 1px solid #bfbfbf;
+}
+
+.content-accordion .ui-state-default,
+.content-accordion .ui-widget-content .ui-state-default,
+.content-accordion .ui-widget-header .ui-state-default,
+.content-accordion .ui-state-hover,
+.content-accordion .ui-widget-content .ui-state-hover,
+.content-accordion .ui-widget-header .ui-state-hover,
+.content-accordion .ui-state-focus,
+.content-accordion .ui-widget-content .ui-state-focus,
+.content-accordion .ui-widget-header .ui-state-focus,
+.content-accordion .ui-state-active,
+.content-accordion .ui-widget-content .ui-state-active,
+.content-accordion .ui-widget-header .ui-state-active {
+	background: transparent none;
+	border: none;
+	border-bottom: 1px solid #bfbfbf;
+	border-radius: 0;
+	color: #ef3124;
+	font-size: 12px;
+	font-family: open_sansbold;
+	padding-left: 21px;
+}
+/*Removing bottom line from selected location*/
+.content-accordion .ui-state-active,
+.content-accordion .ui-widget-content .ui-state-active,
+.content-accordion .ui-widget-header .ui-state-active {
+	border-color: transparent;
+}
+/* Icon
+----------------------------------*/
+.content-accordion .ui-accordion-header-icon.ui-icon.ui-icon-triangle-1-e {
+	left: 0;
+	top: 13px;
+	background: transparent url(./img/framework/icons/content-accordion-arrows.png) no-repeat 1px 1px;
+}
+.content-accordion .ui-accordion-header-icon.ui-icon.ui-icon-triangle-1-s {
+	left: 0;
+	top: 13px;
+	background: transparent url(./img/framework/icons/content-accordion-arrows.png) no-repeat 1px -27px;
+}
+/* Content background
+----------------------------------*/
+.content-accordion .ui-widget-content {
+	background: transparent none;
+	border: none;
+	border-bottom: 1px solid #bfbfbf;
+	border-radius: 0;
+	color: #2e2e2e;
+	padding: 0 0 0 21px;
+	margin: 0;
+}
+.content-accordion .ui-accordion .ui-accordion-content {
+	padding: 0;
+	margin: 0;
+}
+
+.content-accordion .ui-accordion-content.ui-widget-content{
+	font-size: 12px;
+	color: #2e2e2e;
+}
+.content-accordion .ui-accordion-content.ui-widget-content a{
+	color: #ef3124;
+}
+
+
+/*---------------------------------------------------------------
+Footer
+---------------------------------------------------------------*/
+#framework-footer .callouts{
+	background: #303030;
+	background: -moz-linear-gradient(top,  #242424 0%, #303030 50%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#242424), color-stop(50%,#303030));
+	background: -webkit-linear-gradient(top,  #242424 0%,#303030 50%);
+	background: -o-linear-gradient(top,  #242424 0%,#303030 50%);
+	background: -ms-linear-gradient(top,  #242424 0%,#303030 50%);
+	background: linear-gradient(to bottom,  #242424 0%,#303030 50%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242424', endColorstr='#303030',GradientType=0 );
+	padding: 20px 0;
+}
+
+#framework-footer .callouts .side-line{
+	border-left: 1px solid #7b6e64;
+	padding-left: 20px;
+}
+
+/*Quicklinks*/
+#menu-quicklinks {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	overflow: hidden;
+}
+
+#menu-quicklinks li{
+	float: left;
+	width: 48%;
+	margin: 0 2% 0 0;
+	background: none;
+	padding: 0;
+}
+
+/*Tweets*/
+#framework-footer .tweets ul{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+#framework-footer .really_simple_twitter_widget li{
+	padding: 0 0 15px 33px;
+	background: url(./img/framework/backgrounds/tweet.png) no-repeat 0px 0px;
+}
+#framework-footer .really_simple_twitter_widget li p{
+	margin: 0;
+}
+
+/*Locations - overwriting jquery info*/
+/* Interaction states
+----------------------------------*/
+#framework-footer .accordion-locations .ui-state-default,
+#framework-footer .accordion-locations .ui-widget-content .ui-state-default,
+#framework-footer .accordion-locations .ui-widget-header .ui-state-default,
+#framework-footer .accordion-locations .ui-state-hover,
+#framework-footer .accordion-locations .ui-widget-content .ui-state-hover,
+#framework-footer .accordion-locations .ui-widget-header .ui-state-hover,
+#framework-footer .accordion-locations .ui-state-focus,
+#framework-footer .accordion-locations .ui-widget-content .ui-state-focus,
+#framework-footer .accordion-locations .ui-widget-header .ui-state-focus,
+#framework-footer .accordion-locations .ui-state-active,
+#framework-footer .accordion-locations .ui-widget-content .ui-state-active,
+#framework-footer .accordion-locations .ui-widget-header .ui-state-active {
+	background: transparent none;
+	border: none;
+	border-bottom: 1px solid #7b6e65;
+	border-radius: 0;
+	color: #fdc057;
+	font-size: 11px;
+	font-family: open_sansbold;
+	padding-left: 15px;
+}
+/*Removing bottom line from selected location*/
+#framework-footer .accordion-locations .ui-state-active,
+#framework-footer .accordion-locations .ui-widget-content .ui-state-active,
+#framework-footer .accordion-locations .ui-widget-header .ui-state-active {
+	border-color: transparent;
+}
+/* Icon
+----------------------------------*/
+#framework-footer .ui-accordion .ui-accordion-header .ui-accordion-header-icon {
+	left: 0;
+	background-image: url(./img/framework/icons/jquery-replacements/ui-icons_yellow_256x240.png);
+}
+/* Content background
+----------------------------------*/
+#framework-footer .accordion-locations .ui-widget-content {
+	background: transparent none;
+	border: none;
+	border-bottom: 1px solid #7b6e65;
+	border-radius: 0;
+	color: #fff;
+	padding: 0;
+	margin: 0;
+}
+#framework-footer .ui-accordion .ui-accordion-content {
+	padding: 0;
+	margin: 0;
+}
+#framework-footer .accordion-locations p{
+	padding: 0 0 10px 15px;
+	margin: 0;
+	font-size: 11px;
+	color: #fff;
+}
+
+
+/*Locations - 2 3rd party banners*/
+#framework-footer .col-clear{
+	padding-top: 5px;
+}
+#framework-footer .col-clear div{
+	width: 50%;
+}
+#framework-footer .col-clear .float-left{
+	padding-top: 20px;
+}
+
+/*Copyright*/
+#framework-footer .copyright{
+	border: 1px solid #ef3124;
+	background: #f14539; /* Old browsers */
+	background: -moz-linear-gradient(top,  #f14539 0%, #ef3124 50%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f14539), color-stop(50%,#ef3124));
+	background: -webkit-linear-gradient(top,  #f14539 0%,#ef3124 50%);
+	background: -o-linear-gradient(top,  #f14539 0%,#ef3124 50%);
+	background: -ms-linear-gradient(top,  #f14539 0%,#ef3124 50%);
+	background: linear-gradient(to bottom,  #f14539 0%,#ef3124 50%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f14539', endColorstr='#ef3124',GradientType=0 );
+}
+
+#framework-footer .copyright p{
+	margin: 12px 0;
+}
+
+/*Social Media*/
+#framework-footer .social-media{
+	margin: 6px 0;
+	overflow: hidden;
+}
+#framework-footer .social-media ul.ul-design{
+	float: right;
+}
+#framework-footer .social-media ul li a,
+#framework-footer .social-media ul li span{
+		padding: 3px;
+		opacity:0.6;
+		filter:alpha(opacity=60);
+		transition:all .5s;
+		background: transparent;
+		border-radius: 20px;
+		display: block;
+}
+#framework-footer .social-media ul li a:hover,
+#framework-footer .social-media ul li a:active,
+#framework-footer .social-media ul li span:hover,
+#framework-footer .social-media ul li span:active{
+		opacity:1;
+		filter:alpha(opacity=100);
+		background: #d81e11;
+}
+
+/*---------------------------------------------------------------
+Scroll to top
+---------------------------------------------------------------*/
+.scrollup{
+	width:40px;
+	height:40px;
+	position:fixed;
+	bottom:20px;
+	right:20px;
+	display:none;
+	text-indent:-9999px;
+	background: url('./img/framework/icon_top.png') no-repeat;
+}
+
+/*=================================================================
+Colored backgrounds - Call to actions, impact, etc
+=================================================================*/
+/*---------------------------------------------------------------
+Red Background - home impact, breadcrumb
+---------------------------------------------------------------*/
+.bg-red-texture{
+	background: #ef3124 url(./img/framework/backgrounds/red-texture.gif) repeat 0px 0px;
+	-moz-box-shadow:inset 0px 0px 12px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow:inset 0px 0px 12px rgba(0, 0, 0, 0.2);
+	box-shadow:inset 0px 0px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+/*---------------------------------------------------------------
+Yellow background call to actions
+---------------------------------------------------------------*/
+.bg-yellow-stripes{
+	background: #fdc057 url(./img/framework/backgrounds/yellow-diagonal.gif) repeat 0px 0px;
+	-moz-box-shadow:inset 0px 0px 12px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow:inset 0px 0px 12px rgba(0, 0, 0, 0.2);
+	box-shadow:inset 0px 0px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Wordpress Replacement for .yellow-callout-headings */
+
+.bg-yellow-stripes .widget .widgettitle {
+	font-family: open_sanssemibold;
+	font-size: 18px;
+	text-transform: uppercase;
+	text-align: center;
+	color: #7b6e65;
+	text-shadow: 1px 1px 1px #ffcc74;
+	margin-bottom: 12px;
+}
+
+.yellow-callouts .header{
+	font-family: open_sanssemibold;
+	font-size: 18px;
+	text-transform: uppercase;
+	text-align: center;
+	color: #7b6e65;
+	text-shadow: 1px 1px 1px #ffcc74;
+}
+
+.yellow-callout-headings{
+	font-family: open_sanssemibold;
+	font-size: 18px;
+	text-transform: uppercase;
+	text-align: center;
+	color: #7b6e65;
+	text-shadow: 1px 1px 1px #ffcc74;
+}
+.bg-yellow-stripes .side-line{
+	border-left: 1px dashed #fcf1de;
+	padding-left: 10px;
+}
+
+/*Upcoming events - calendar links*/
+.bg-yellow-stripes .upcoming-events li{
+	margin-bottom: 1em;
+}
+.bg-yellow-stripes .upcoming-events li{
+	border-bottom: 1px dashed #fcf1de;
+}
+.bg-yellow-stripes .upcoming-events a{
+	display: block;
+	padding: 1em 0 .75em 0;
+	overflow: hidden;
+}
+.bg-yellow-stripes .upcoming-events a:hover{
+	text-decoration: none;
+}
+.bg-yellow-stripes .upcoming-events a span{
+	display: block;
+	overflow: hidden;
+}
+.bg-yellow-stripes .upcoming-events a span.calendar-date{
+	border: 2px solid #fff;
+	border-top-width: 6px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 3px 3px 3px #d68700;
+	-webkit-box-shadow: 3px 3px 3px #d68700;
+	box-shadow: 3px 3px 3px #d68700;
+	width: 43px;
+	float: left;
+	margin: 0 10px .25em 0;
+	color: #fff;
+	padding: 2px 0 4px 0;
+}
+.bg-yellow-stripes .upcoming-events a span.calendar-date span.month{
+	font-size: 8px;
+	line-height: 8px;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	padding: 0 0 2px 1px;
+}
+.bg-yellow-stripes .upcoming-events a span.calendar-date span.day{
+	font-size: 30px;
+	line-height: 24px;
+	text-align: center;
+}
+.bg-yellow-stripes .upcoming-events a span.event-details{
+	overflow: hidden;
+}
+.bg-yellow-stripes .upcoming-events a span.event-details span.heading{
+	font-family: open_sanssemibold;
+	font-size: 16px;
+	line-height: 1;
+}
+.bg-yellow-stripes .upcoming-events a span.event-details span.excerpt{
+	color: #2c2c2b;
+}
+
+/*Ways to give*/
+.bg-yellow-stripes .ways-to-give-list{
+	margin-top:1em;
+}
+.bg-yellow-stripes .ways-to-give-list li{
+	width: 33%;
+	margin:0 0 1em 0;
+}
+.bg-yellow-stripes .ways-to-give-list li a{
+	display: block;
+	overflow: hidden;
+	text-align: center;
+	color: #2c2c2b;
+	margin: 0 auto;
+}
+.bg-yellow-stripes .ways-to-give-list li a:hover,
+.bg-yellow-stripes .ways-to-give-list li a:active{
+	text-decoration: none;
+}
+.bg-yellow-stripes .ways-to-give-list li a span{
+	padding-left: 3px;
+	margin: 3px auto 3px auto;
+	display: block;
+	transition: margin .25s;
+}
+.bg-yellow-stripes .ways-to-give-list li a:hover span,
+.bg-yellow-stripes .ways-to-give-list li a:active span{
+	margin: 0 auto 6px auto;
+}
+/*.bg-yellow-stripes .ways-to-give-button-container,
+.bg-yellow-stripes .ways-to-give-button-container.padding-bottom-1 {
+	margin-bottom: 2em;
+}*/
+
+.bg-yellow-stripes .ways-to-give-button-container button{
+	width: 97%;
+	margin: 0 auto;
+	display: block;
+}
+
+.ways-to-give-button {
+	display: block;
+	width: 78%;
+	text-align: center;
+}
+
+/*Latest News*/
+.bg-yellow-stripes .latest-news .side-line{
+	border-bottom: 1px dashed #fcf1de;
+	border-left: none;
+	padding: 0 0 1em 0;
+	margin: 1em 0 0 0;
+}
+.bg-yellow-stripes .latest-news article{
+	text-align: center;
+}
+.bg-yellow-stripes .latest-news article h1{
+	font: normal 14px open_sanssemibold;
+}
+.bg-yellow-stripes .latest-news article p{
+	margin: 0;
+}
+
+/**************************************
+* MD Food Bank Recent Posts Widget Style
+*/
+
+.recent-posts .recent-post-item {
+	display: inline-block;
+	margin-top: 1em;
+	padding-bottom: 1em;
+	border-bottom: 1px dashed #fcf1de;
+}
+
+.recent-posts .recent-posts-date-container {
+	cursor: pointer;
+}
+
+.recent-posts .recent-posts-date {
+	float: left;
+	border: 2px solid #fff;
+	border-top-width: 6px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 3px 3px 3px #d68700;
+	-webkit-box-shadow: 3px 3px 3px #d68700;
+	box-shadow: 3px 3px 3px #d68700;
+	width: 43px;
+	margin: 0 10px .25em 0;
+	color: #fff;
+	padding: 2px 0 4px 0;
+
+}
+
+.recent-posts .recent-posts-date span {
+	display: block;
+}
+
+.recent-posts .recent-posts-date-month {
+	font-size: 8px;
+	line-height: 8px;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	padding: 0 0 2px 1px;
+}
+
+.recent-posts .recent-posts-date-day {
+	font-size: 30px;
+	line-height: 24px;
+	text-align: center;
+}
+.recent-posts .recent-posts-author {
+	display: none;
+}
+
+/*-------Email Subscribe: Shortcode-------*/
+/*main wrapper*/
+.gform-join-wrapper{
+	padding: 15px 10px;
+}
+/*heading*/
+.gform-join-wrapper .gform_heading h3{
+	text-align: left;
+	font-family: open_sanssemibold;
+	font-size: 18px;
+	text-transform: uppercase;
+	color: #7b6e65;
+	text-shadow: 1px 1px 1px #ffcc74;
+	padding-left: 40px;
+	background: url(img/framework/icons/email.png) no-repeat 0px 0px;
+	margin: 0;
+}
+.gform-join-wrapper .gform_heading .gform_description{
+	display: block;
+	padding-bottom: .5em;
+}
+/*floating field*/
+.gform-join-wrapper form{
+	overflow: hidden;
+}
+.gform-join-wrapper form .gform_body{
+	width: 65%;
+	float: left;
+}
+/*input field revisions (bg)*/
+.gform-join-wrapper form .input-overlay{
+	border-radius: 20px 0 0 20px;
+	width: 100%;
+}
+/*float submit button*/
+.gform-join-wrapper form .gform_footer{
+	width: 35%;
+	float:left;
+}
+/*submit button revisions*/
+.gform-join-wrapper form .gform_footer .gform_button{
+	margin: 0 0 5px 0;
+	font-size: 12px;
+	border-radius: 0px 20px 20px 0;
+	padding: 7px 5px 8px 5px;
+	width: 96%;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow:2px 2px 4px rgba(0, 0, 0, 0.2);
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+/*issues with firefox padding on submit button*/
+@-moz-document url-prefix() {
+	.gform-join-wrapper form .gform_footer .gform_button{
+		padding: 4px 5px;
+	}
+}
+/*Hiding extra return verbiage*/
+.gform-join-wrapper .hide-for-content-shortcode{
+	display: none;
+}
+
+/*-------Email Subscribe: Widget-------*/
+.gform-widget-wrapper .header{
+	text-align: left;
+	padding-left: 40px;
+	position: relative;
+}
+.gform-widget-wrapper .header .sprite{
+	width: 34px;
+	height: 29px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: url(img/framework/icons/email.png) no-repeat 0px 0px;
+	display: block;
+}
+.gform-widget-wrapper .gform_heading{
+	padding-bottom: .5em;
+}
+/*Form class attributes are identical to shortcode except class is different*/
+/*floating field*/
+.gform-widget-wrapper form{
+	overflow: hidden;
+}
+.gform-widget-wrapper form .gform_body{
+	width: 65%;
+	float: left;
+}
+/*input field revisions (bg)*/
+.gform-widget-wrapper form .input-overlay{
+	border-radius: 20px 0 0 20px;
+	width: 100%;
+}
+/*float submit button*/
+.gform-widget-wrapper form .gform_footer{
+	width: 35%;
+	float:left;
+}
+/*submit button revisions*/
+.gform-widget-wrapper form .gform_footer .gform_button{
+	margin: 0 0 5px 0;
+	font-size: 12px;
+	border-radius: 0px 20px 20px 0;
+	padding: 7px 5px 8px 5px;
+	width: 96%;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow:2px 2px 4px rgba(0, 0, 0, 0.2);
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+/*issues with firefox padding on submit button*/
+@-moz-document url-prefix() {
+	.gform-widget-wrapper form .gform_footer .gform_button{
+		padding: 4px 5px;
+	}
+}
+/*Hiding extra return verbiage*/
+.gform-widget-wrapper .hide-for-widget{
+	display: none;
+}
+
+/*Search this section*/
+.connection_search{
+	padding-bottom: 20px !important;
+	overflow: hidden;
+}
+
+/*Categories select box*/
+#sidebar-cateogires-form ul li,
+#sidebar-publish-form ul li{
+	padding-left: 0;
+}
+
+
+/*Aside lists: Archive and Category lists*/
+.widget_archive ul li,
+#sidebar-cateogires-form ul li{
+	padding-left: 0;
+	font-size: 10px;
+	color: #fff;
+}
+
+.widget_archive ul li a,
+#sidebar-cateogires-form ul li a{
+	font-family: 'open_sanssemibold';
+	font-size: 12px;
+	color: #ef3124;
+}
+
+.widget_archive ul li a:hover,
+#sidebar-cateogires-form ul li a:hover{
+	color: #fff;
+	text-decoration: none;
+}
+
+
+
+/*---------------------------------------------------------------
+Blue striped backgrounds
+---------------------------------------------------------------*/
+.bg-blue-stripes{
+	background: #55bdba url(./img/framework/backgrounds/blue-diagonal.gif) repeat 0px 0px;
+	-moz-box-shadow:inset 0px 0px 5px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow:inset 0px 0px 5px rgba(0, 0, 0, 0.5);
+	box-shadow:inset 0px 0px 5px rgba(0, 0, 0, 0.5);
+	padding: 14px;
+}
+
+/*=================================================================
+Side social media
+=================================================================*/
+#side-social-media{
+	position: fixed;
+	left: 0;
+	top: 200px;
+	z-index: 455;
+}
+#side-social-media .top{
+	background: url(./img/framework/backgrounds/social-media-top.png) no-repeat left top;
+}
+#side-social-media .bottom{
+	background: url(./img/framework/backgrounds/social-media-bottom.png) no-repeat left bottom;
+	padding: 56px 0 57px 0;
+}
+#side-social-media .tile{
+	background: url(./img/framework/backgrounds/social-media-tile.png) repeat-y left top;
+	padding: 0 0 0 3px;
+	width: 32px;
+}
+
+/*=================================================================
+Specific pages: Home
+=================================================================*/
+/*--Impact Area--*/
+#home-impact{
+	padding: 8px 0 9px 0;
+}
+/*--Callouts--*/
+#home-callouts{
+	padding: 1.5em 0 .5em 0;
+}
+#home-callouts.bg-yellow-stripes{
+	-moz-box-shadow:inset 0px -5px 5px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow:inset 0px -5px 5px rgba(0, 0, 0, 0.2);
+	box-shadow:inset 0px -5px 5px rgba(0, 0, 0, 0.2);
+}
+#home-callouts .photo-borders{
+	border: none;
+}
+
+/*--home-buttons--*/
+#home-buttons nav ul{
+	margin: 0;
+	padding: 10px 0 20px 0;
+}
+
+.home-button{
+	width: 92%;
+	margin: 0 auto 3px auto;
+	display: block;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.home-button a {
+	display: block;
+	text-align: center;
+}
+
+.red-button.home-button a{
+	color: #fff !important;
+}
+
+/*=================================================================
+Specific pages: Contact Us
+=================================================================*/
+#contact-map{
+	width: 100%;
+	height: 330px;
+	border: none;
+	margin: 0;
+	padding: 0;
+	display: block;
+	overflow: hidden;
+}
+
+/*Form - css to put labels behind form fields*/
+.overlay-form ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.overlay-form .input-overlay{
+	margin: 0 0 5px 0;
+	width: 98%;
+	background: #fff;
+	-moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow:2px 2px 4px rgba(0, 0, 0, 0.2);
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+	border-radius: 20px;
+	border: 1px solid #e3e3e1;
+	display: block;
+	padding: 0;
+	position: relative;
+	overflow: hidden;
+}
+
+.overlay-form .input-overlay.textarea {
+	border-radius: 10px;
+}
+
+.overlay-form .input-overlay span {
+	position: absolute;
+	display: block;
+}
+.overlay-form .input-overlay input,
+/*.overlay-form .input-overlay select,*/
+.overlay-form .input-overlay textarea{
+	position: relative;
+	background: transparent;
+}
+.overlay-form .input-overlay textarea{
+	resize: none;
+	height: 100px;
+}
+/*Common items for fields and label*/
+.overlay-form .input-overlay span,
+.overlay-form .input-overlay input,
+/*.overlay-form .input-overlay select,*/
+.overlay-form .input-overlay textarea{
+	color: #424242;
+	margin: 0;
+	line-height: 1;
+	font: inherit;
+	font-weight: normal;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100%;
+	display: block;
+	border: none;
+	padding: 4px 8px 4px 8px;
+}
+/*Padding needs to be 2 less on top and 1 more on left of padding in above declaration*/
+.overlay-form .input-overlay span{
+	padding-top: 3px;
+	padding-left: 9px;
+	z-index: 2;
+}
+.overlay-form .radio{
+	margin: .75em 0;
+}
+.overlay-form .radio input{
+	margin-right: 3px;
+}
+.overlay-form .submit input{
+	margin: 0 auto;
+	display: block;
+}
+/*issues with firefox padding on submit button*/
+@-moz-document url-prefix() {
+	.overlay-form .submit input{
+		padding: 6px 20px;
+	}
+}
+
+/*removing background for select boxes*/
+.input-overlay.select-container{
+	background-color: transparent;
+	border-radius: 0;
+	border: none;
+	padding: 0;
+	box-shadow: none;
+}
+.input-overlay.select-container select{
+	width: 100%;
+}
+
+/*=================================================================
+Specific pages: Careers
+=================================================================*/
+.career-buttons{
+	font-size: 16px !important;
+	font-family: open_sanssemibold !important;
+	font-weight: normal !important;
+	width: 98%;
+	text-align: left;
+	padding: 10px 10px 10px 48px;
+	display: block;
+	position: relative;
+}
+.career-buttons span{
+	display: block;
+	position: absolute;
+	top: 4px;
+	left: 0px;
+	width: 26px;
+	height: 26px;
+	background: transparent url(./img/framework/icons/carreer-button-icons.png) no-repeat 0px 0px;
+	margin-left: 15px;
+}
+.career-buttons.resume span.icon{
+	background-position: 0px 0px;
+}
+.career-buttons.application span.icon{
+	background-position: 0px -34px;
+}
+/*=================================================================
+Specific pages: Branches
+=================================================================*/
+.branch-map .data{
+	padding: 1em;
+}
+.branch-map .data p{
+	margin: 0;
+}
+
+/*=================================================================
+Specific pages: Need Food
+=================================================================*/
+/*Form container*/
+#need-food{
+	padding: 1em;
+}
+/*Form*/
+#need-food-form ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 4px 0 0 0;
+	overflow: hidden;
+}
+#need-food-form ul li{
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+#need-food-form .input{
+	margin: 0;
+	width: 60%;
+	display: block;
+	padding: 0;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0 0 5px 0;
+}
+#need-food-form .input-overlay{
+	margin: 0 0 5px 0;
+	width: 100%;
+	display: block;
+	padding: 0;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	background: #fff;
+	-moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow:2px 2px 4px rgba(0, 0, 0, 0.2);
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+	border-radius: 20px 0 0 20px;
+	border: 1px solid #e3e3e1;
+	position: relative;
+}
+#need-food-form .submit{
+	margin: 0;
+	padding: 0 5px 5px 0;
+	width: 37%;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+#need-food-form .input-overlay span {
+	position: absolute;
+	display: block;
+}
+#need-food-form .input-overlay input{
+	position: relative;
+	background: transparent;
+}
+/*Common items for fields and label*/
+#need-food-form .input-overlay span,
+#need-food-form .input-overlay input{
+	color: #424242;
+	margin: 0;
+	line-height: 1;
+	font: inherit;
+	font-weight: normal;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100%;
+	display: block;
+	border: none;
+	padding: 4px 8px 4px 8px;
+}
+/*Padding needs to be 2 less on top and 1 more on left of padding in above declaration*/
+#need-food-form .input-overlay span{
+	padding-top: 2px;
+	padding-left: 9px;
+}
+
+#need-food-form .red-button{
+	margin: 0 auto;
+	display: block;
+	font-family: open_sansbold;
+	font-size: 12px;
+	border-radius: 0px 20px 20px 0;
+	padding: 7px 5px 8px 5px;
+	width: 100%;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+/*issues with firefox padding on submit button*/
+@-moz-document url-prefix() {
+	#need-food-form .red-button{
+		padding: 6px 5px 7px 5px;
+	}
+}
+
+/*Returns*/
+
+#gmw-pt-pagination .gmw-pt-per-page-dropdown,
+#gmw-pt-pagination ul,
+#gmw-pt-pagination ul li {
+	float: left;
+}
+
+
+#need-food-returns{
+
+}
+#need-food-returns h2{
+	font: normal 14px  open_sansbold;
+	text-transform: uppercase;
+	margin: 2em 0 0 0;
+}
+#need-food-returns .return{
+	border-top: 1px solid #bfbfbf;
+	margin: 1em 0 0 0;
+	padding: 1em 0 0 0;
+}
+#need-food-returns .range{
+	color: #7b6e65;
+	font: normal 12px  open_sansbold;
+}
+#need-food-returns .address,
+#need-food-returns .details{
+	width: 48%;
+	float: left;
+}
+#need-food-returns .details{
+	float: right;
+}
+#need-food-returns .address p:first-child,
+#need-food-returns .details p:first-child{
+	margin-top: 0;
+}
+
+/*Map*/
+#need-food-map{
+	width: 100%;
+	height: 453px;
+	border: none;
+	margin: 0;
+	padding: 0;
+	display: block;
+	overflow: hidden;
+}
+
+/*=================================================================
+Specific pages: The Stories
+=================================================================*/
+
+/*=================================================================
+Specific pages: Search Return
+=================================================================*/
+#search-return .returns{
+	margin: 1.5em 0;
+}
+#search-return .returns h3{
+	margin: 0;
+	font: normal 14px "open_sanssemibold";
+}
+#search-return .returns p{
+	margin: 0;
+}
+#search-return .pagination{
+	margin: 0 0 2em 0;
+}
+#search-return .pagination .heading,
+#search-return .pagination .active{
+	font-family: "open_sanssemibold";
+}
+
+/*=================================================================
+Specific pages: Wordpress - Archive Template - archive
+=================================================================*/
+/*RSS link*/
+.rss a{
+	display: inline-block;
+	padding: 2px 0 0 18px;
+	font-size: 11px;
+	color: #424242;
+	background: url(./img/framework/icons/rss.gif) no-repeat 0px 0px;
+	min-height: 11px;
+}
+
+/*Sort page returns*/
+.archive .sort{
+	background: #fdc057 url(./img/framework/backgrounds/yellow-diagonal.gif) repeat 0px 0px;
+	-moz-box-shadow:inset 0px 0px 12px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow:inset 0px 0px 12px rgba(0, 0, 0, 0.2);
+	box-shadow:inset 0px 0px 12px rgba(0, 0, 0, 0.2);
+	border-radius: 5px;
+	padding: 1em;
+}
+.archive .sort ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+.archive .sort ul li{
+	float: left;
+	font-size: 11px;
+}
+
+/*Columns with text*/
+.archive .sort ul li.col-01{
+	font-family: "open_sansbold";
+	padding: 0 1em 0 0;
+	fon-weight: normal;
+}
+.archive .sort ul li.col-02{
+	padding: 0 .5em 0 0;
+}
+.archive .sort ul li.col-04{
+	padding: 0 .5em 0 1em;
+}
+.archive .sort ul li.col-06{
+	padding: 0 0 0 .5em;
+}
+.archive .sort ul li.col-07{
+	float: right;
+}
+/*matching the top padding for all text columns*/
+.archive .sort ul li.col-01,
+.archive .sort ul li.col-02,
+.archive .sort ul li.col-04,
+.archive .sort ul li.col-06,
+.archive .sort ul li.col-07{
+	padding-top: 6px;
+}
+
+/*Columns with select fields*/
+/*.archive .sort ul li.col-03,
+.archive .sort ul li.col-05{
+	background: #fff;
+	-moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow:2px 2px 4px rgba(0, 0, 0, 0.2);
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+	border-radius: 20px;
+	border: 1px solid #e3e3e1;
+	margin: 0 0 5px 0;
+}
+.archive .sort ul li select{
+	background: transparent;
+	color: #424242;
+	margin: 0;
+	line-height: 1;
+	font: inherit;
+	font-weight: normal;
+	width: 70px;
+	display: block;
+	border: none;
+	padding: 4px 8px 4px 8px;
+	font-size: 11px;
+}*/
+.archive .sort ul li.col-03,
+.archive .sort ul li.col-05{
+	margin: 0 0 5px 0;
+	padding: 2px 0 0 0;
+}
+.archive .sort ul li select{
+	color: #424242;
+	margin: 0;
+	line-height: 1;
+	font: inherit;
+	font-weight: normal;
+	width: 70px;
+	display: block;
+	padding: 4px;
+	font-size: 11px;
+}
+
+/*Container for each article*/
+.archive article{
+	padding: 2em 0;
+	border-bottom: 1px solid #bfbfbf;
+}
+/*Image*/
+.archive article figure{
+	border: 1px solid #d6d6d6;
+	background: #fff;
+	padding: 2px;
+	max-width: 100%;
+	height: auto;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.archive article figure img{
+	max-width: 100%;
+	height: auto;
+}
+/*Content Colum*/
+.archive article header h1{
+	font: normal 22px "open_sanssemibold";
+	line-height: 1.1em;
+}
+.archive article .date{
+	font: normal 12px "open_sansbold";
+	margin: 2px 0 1em 0;
+}
+.archive article .excerpt{
+	margin: 0;
+}
+.archive article .link{
+	margin: 0;
+}
+.archive article .link:before{
+	content: ">> ";
+	color: #ef3124;
+}
+
+/*Pages... (bottom)*/
+.archive .pagination{
+	padding: 1em 0 2em 0;
+}
+
+/*Author info*/
+.entry-meta{
+	font-size: 11px;
+	font-family: "open_sanssemibold_italic";
+	color: #7b6e65;
+}
+.entry-meta.post {
+	font-size: 12px;
+	font-family: "open_sansbold";
+	color: #000;
+	padding-top: 5px;
+	border-bottom: solid 1px #d6d6d6;
+	margin-bottom: 12px;
+	padding-bottom: 4px;
+}
+footer.entry-meta{
+	margin-bottom: 1em;
+}
+
+/*Leave a Reply/ Comments
+////////////////////////////////////////////////////*/
+
+#comments{
+	border-top: 1px solid #BFBFBF;
+	padding-top: 2em;
+	margin-top: 2em;
+}
+h3#reply-title{
+	font-size: 16px;
+}
+/*Form - css to put labels behind form fields
+This is almost identical to .overlay form but uses paragraphs instead of ul
+*/
+#commentform p.comment-form-author,
+#commentform p.comment-form-email,
+#commentform p.comment-form-url,
+#commentform p.comment-form-comment{
+	margin: 0 0 5px 0;
+	width: 98%;
+	background: #fff;
+	-moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow:2px 2px 4px rgba(0, 0, 0, 0.2);
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+	border-radius: 20px;
+	border: 1px solid #e3e3e1;
+	display: block;
+	padding: 0;
+	position: relative;
+	overflow: hidden;
+	border-radius: 10px;
+}
+
+#commentform p label.input-overlay span {
+	position: absolute;
+	display: block;
+	top: 2px;
+	left: 9px;
+}
+#commentform p label.input-overlay  input,
+#commentform p  label.input-overlay textarea{
+	position: relative;
+	background: transparent;
+}
+#commentform p label.input-overlay  textarea{
+	resize: none;
+	height: 100px;
+	border-radius: 10px;
+}
+/*Common items for fields and label*/
+#commentform p label.input-overlay label,
+#commentform p label.input-overlay input,
+/*.overlay-form .input-overlay select,*/
+#commentform p textarea{
+	color: #424242;
+	margin: 0;
+	line-height: 1;
+	font: inherit;
+	font-weight: normal;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100%;
+	display: block;
+	border: none;
+	padding: 2px 8px 4px 9px;
+}
+
+
+/*issues with firefox padding on submit button*/
+@-moz-document url-prefix() {
+	#commentform p.form-submit input{
+		padding: 6px 20px;
+	}
+}
+
+/*Submit buttons*/
+#commentform p.form-submit input{
+	font: normal 18px/1 "open_sansbold";
+	text-transform: uppercase;
+	padding: 5px 10px;
+	-moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+	-webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+	border-radius: 20px;
+	border: 1px solid #e5e5e5;
+	color: #FFF;
+	border-color: #e5e5e5;
+	background: #ee3124;
+	background: -moz-linear-gradient(top,  #ee3124 0%, #e12e22 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ee3124), color-stop(100%,#e12e22));
+	background: -webkit-linear-gradient(top,  #ee3124 0%,#e12e22 100%);
+	background: -o-linear-gradient(top,  #ee3124 0%,#e12e22 100%);
+	background: -ms-linear-gradient(top,  #ee3124 0%,#e12e22 100%);
+	background: linear-gradient(to bottom,  #ee3124 0%,#e12e22 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ee3124', endColorstr='#e12e22',GradientType=0 );
+	text-shadow: 0px 1px 0px #891c14;
+	width: 200px;
+	margin: 1em 0 2em 0;
+	display: block;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+#commentform p.form-submit input:hover,
+#commentform p.form-submit input:active{
+	background: #e12e22;
+	background: -moz-linear-gradient(top,  #e12e22 22%, #ee3124 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(22%,#e12e22), color-stop(100%,#ee3124));
+	background: -webkit-linear-gradient(top,  #e12e22 22%,#ee3124 100%);
+	background: -o-linear-gradient(top,  #e12e22 22%,#ee3124 100%);
+	background: -ms-linear-gradient(top,  #e12e22 22%,#ee3124 100%);
+	background: linear-gradient(to bottom,  #e12e22 22%,#ee3124 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e12e22', endColorstr='#ee3124',GradientType=0 );
+	text-shadow: 0px -1px 0px #891c14;
+}
+.form-allowed-tags,
+.form-allowed-tags code{
+	font-size: 10px;
+	color: #7b6e65;
+}
+
+/*Comments*/
+
+.comment-reply-link{
+	font: normal 11px/1 "open_sansbold";
+	text-transform: uppercase;
+	padding: 5px 10px;
+	-moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+	-webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+	border-radius: 20px;
+	border: 1px solid #e5e5e5;
+	color: #FFF;
+	border-color: #e5e5e5;
+	background: #ee3124;
+	background: -moz-linear-gradient(top,  #ee3124 0%, #e12e22 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ee3124), color-stop(100%,#e12e22));
+	background: -webkit-linear-gradient(top,  #ee3124 0%,#e12e22 100%);
+	background: -o-linear-gradient(top,  #ee3124 0%,#e12e22 100%);
+	background: -ms-linear-gradient(top,  #ee3124 0%,#e12e22 100%);
+	background: linear-gradient(to bottom,  #ee3124 0%,#e12e22 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ee3124', endColorstr='#e12e22',GradientType=0 );
+	text-shadow: 0px 1px 0px #891c14;
+	margin:0;
+	display: inline-block;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.comment-reply-link:hover,
+.comment-reply-link:active{
+	background: #e12e22;
+	background: -moz-linear-gradient(top,  #e12e22 22%, #ee3124 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(22%,#e12e22), color-stop(100%,#ee3124));
+	background: -webkit-linear-gradient(top,  #e12e22 22%,#ee3124 100%);
+	background: -o-linear-gradient(top,  #e12e22 22%,#ee3124 100%);
+	background: -ms-linear-gradient(top,  #e12e22 22%,#ee3124 100%);
+	background: linear-gradient(to bottom,  #e12e22 22%,#ee3124 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e12e22', endColorstr='#ee3124',GradientType=0 );
+	text-shadow: 0px -1px 0px #891c14;
+	text-decoration: none;
+}
+
+
+h2.comments-title{
+	margin-bottom: 2em;
+}
+
+#comments > ol > li{
+	border-bottom: 1px solid #BFBFBF;
+	margin-bottom: 2em;
+	padding-bottom: 2em;
+}
+
+#comments ol{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+#comments ol ol{
+	margin: 0 0 0 2em;
+}
+#comments ol ol li{
+	padding-top: 2em;
+}
+
+#comments ol li .comment-author.vcard img{
+	float: left;
+	margin: 0 1em 0 0;
+}
+#comments ol.commentlist li .comment-author.vcard cite,
+#comments ol.commentlist li .comment-author.vcard .comment-meta.commentmetadata{
+	overflow: hidden;
+}
+#comments ol.commentlist li .comment-body p{
+	font-size: 14px;
+}
+
+h3#reply-title{
+	margin-top: 2em;
+}
+
+/*Removing side margin/padding from comments side widget*/
+.widget_recent_comments li.recentcomments{
+	padding-left: 0;
+}
+
+
+/*=================================================================
+Specific pages: Wordpress - Single Template - Article
+=================================================================*/
+/*Sort page returns*/
+.single .return-and-share{
+	background: #fdc057 url(./img/framework/backgrounds/yellow-diagonal.gif) repeat 0px 0px;
+	/*-moz-box-shadow:inset 0px 0px 12px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow:inset 0px 0px 12px rgba(0, 0, 0, 0.2);
+	box-shadow:inset 0px 0px 12px rgba(0, 0, 0, 0.2);*/
+	border-radius: 5px;
+	padding: 5px;
+	margin: 0 0 1em 0;
+	overflow: hidden;
+	font-size: 11px;
+}
+.single .return-and-share .return{
+	width: 120px;
+	float: left;
+	font-family: open_sansbold;
+	font-weight: normal;
+	padding:  7px 0 0 10px;
+}
+.single .return-and-share .return a:before{
+	content: "<< ";
+}
+.single .return-and-share .share{
+	float: right;
+	padding: 7px 4px 7px 1em;
+	/*background: #f7f7f7;
+	border-radius: 5px;
+	-moz-box-shadow:inset 0px 0px 4px #adadad;
+	-webkit-box-shadow:inset 0px 0px 4px #adadad;
+	box-shadow:inset 0px 0px 4px #adadad;
+	border: 1px solid #adadad;*/
+}
+
+/*Content Formatting*/
+.single{
+	margin-bottom: 2em;
+}
+.single article header h1{
+	font: normal 44px "open_sansregular";
+	letter-spacing: -0.02em;
+	color: #ef3124;
+	margin: 0;
+	padding: 0;
+	line-height: 1.1em;
+}
+.single article .date{
+	font: normal 12px "open_sansbold";
+	margin: 0 0 12px 0;
+	padding-top: 5px;
+	border-bottom: solid 1px #d6d6d6;
+	margin-bottom: 12px;
+	padding-bottom: 4px;
+}
+
+
+
+
+/*=================================================================
+Need Food form
+=================================================================*/
+form.gmw-form .gmw-address-field-wrapper{
+	width: 100%;
+}
+form.gmw-form input[type="text"]{
+	margin: 0 0 5px 0;
+	width: 100%;
+	background: #fff;
+	-moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow:2px 2px 4px rgba(0, 0, 0, 0.2);
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+	border-radius: 20px;
+	border: 1px solid #e3e3e1;
+	display: block;
+	padding: 5px 8px;
+	position: relative;
+	overflow: hidden;
+	border-radius: 15px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+form.gmw-form select{
+	width: 100%;
+}
+
+/*Submit buttons*/
+form.gmw-form .gmw-submit{
+	font: normal 18px/1 "open_sansbold";
+	text-transform: uppercase;
+	padding: 5px 10px;
+	-moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+	-webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+	border-radius: 20px;
+	border: 1px solid #e5e5e5;
+	color: #FFF;
+	border-color: #e5e5e5;
+	background: #ee3124;
+	background: -moz-linear-gradient(top,  #ee3124 0%, #e12e22 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ee3124), color-stop(100%,#e12e22));
+	background: -webkit-linear-gradient(top,  #ee3124 0%,#e12e22 100%);
+	background: -o-linear-gradient(top,  #ee3124 0%,#e12e22 100%);
+	background: -ms-linear-gradient(top,  #ee3124 0%,#e12e22 100%);
+	background: linear-gradient(to bottom,  #ee3124 0%,#e12e22 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ee3124', endColorstr='#e12e22',GradientType=0 );
+	text-shadow: 0px 1px 0px #891c14;
+	width: 200px;
+	margin: 1em 0 2em 0;
+	display: block;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+form.gmw-form .gmw-submit:hover,
+form.gmw-form .gmw-submit:active{
+	background: #e12e22;
+	background: -moz-linear-gradient(top,  #e12e22 22%, #ee3124 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(22%,#e12e22), color-stop(100%,#ee3124));
+	background: -webkit-linear-gradient(top,  #e12e22 22%,#ee3124 100%);
+	background: -o-linear-gradient(top,  #e12e22 22%,#ee3124 100%);
+	background: -ms-linear-gradient(top,  #e12e22 22%,#ee3124 100%);
+	background: linear-gradient(to bottom,  #e12e22 22%,#ee3124 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e12e22', endColorstr='#ee3124',GradientType=0 );
+	text-shadow: 0px -1px 0px #891c14;
+}
+/*=================================================================
+News - Side bars
+.sidebars-for-news - is on every item
+.ul-style is on every item where the ul has the color, border, shadow rather than the li tags
+#callout-publish - only on Publish between dates
+=================================================================*/
+/*Form - ul's contain background*/
+
+/*.sidebar-filter select {
+	-moz-box-sizing: border-box;
+	-moz-font-feature-settings: inherit;
+	-moz-font-language-override: inherit;
+	background: #fff;
+	-moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow:2px 2px 4px rgba(0, 0, 0, 0.2);
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+	border-radius: 20px;
+	border: medium none;
+	color: #424242;
+	display: block;
+	font-family: inherit;
+	font-size: inherit;
+	font-size-adjust: inherit;
+	font-stretch: inherit;
+	font-style: inherit;
+	font-variant: inherit;
+	font-weight: normal;
+	line-height: inherit;
+	margin: 0;
+	padding: 4px 8px;
+	width: 100%;
+}*/
+.sidebar-filter select {
+	color: #424242;
+	display: block;
+	margin: 0;
+	padding: 4px;
+	width: 100%;
+	  -moz-box-sizing: border-box;
+	  -webkit-box-sizing: border-box;
+	  box-sizing: border-box;
+}
+.sidebars-for-news form{
+	margin-bottom: 2em;
+}
+
+.sidebars-for-news form ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.ul-style form ul,
+#callout-publish form li{
+	background: #fff;
+	-moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow:2px 2px 4px rgba(0, 0, 0, 0.2);
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+	border-radius: 20px;
+	border: 1px solid #e3e3e1;
+	display: block;
+	width: 100%;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.sidebars-for-news form ul li{
+	overflow: hidden;
+	position: relative;
+}
+.sidebars-for-news form ul .input-overlay span {
+	position: absolute;
+	display: block;
+}
+.sidebars-for-news form ul .input-overlay input{
+	position: relative;
+	background: transparent;
+}
+
+/*Common items for fields and label*/
+.sidebars-for-news form ul span,
+/*.sidebars-for-news form ul select,*/
+.sidebars-for-news form ul input{
+	color: #424242;
+	margin: 0;
+	line-height: 1;
+	font: inherit;
+	font-weight: normal;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100%;
+	display: block;
+	border: none;
+	background: transparent;
+	padding: 4px 8px 4px 8px;
+}
+/*Padding needs to be 2 less on top and 1 more on left of padding in above declaration*/
+.sidebars-for-news form ul .input-overlay span{
+	padding-top: 3px;
+	padding-left: 9px;
+}
+
+/*---
+Unique formatting: Search form and Subscribe form (widths slightly different)
+----*/
+#sidebar-search-form li.field,
+#news-subscribe li.field{
+	float: left;
+	width: 82%;
+	padding: 0;
+}
+#sidebar-search-form li.field{
+	float: left;
+	width: 70%;
+	padding: 0;
+}
+#sidebar-search-form li.submit,
+#news-subscribe li.submit{
+	float: right;
+	width: 18px;
+	/*margin: 4px 4px 0 0;*/
+	padding: 0;
+}
+#sidebar-search-form li.submit{
+	width: 36px;
+}
+
+/*---
+Remove formatting on input-overlay.label and adding it to the form
+--*/
+#sidebar-search-form.overlay-form .input-overlay {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    margin: 0;
+}
+#sidebar-search-form {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #E3E3E1;
+    border-radius: 20px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    display: block;
+    margin: 0 0 5px;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 98%;
+	height: 24px;
+}
+
+
+
+/*Unique widths for subscribe*/
+#news-subscribe li.field{
+	width: 73%;
+}
+#news-subscribe li.submit{
+	width: 34px;
+}
+#sidebar-search-form li.submit button,
+#news-subscribe li.submit button{
+	display: block;
+	margin: 0;
+	padding: 0;
+	background: transparent;
+	border: none;
+}
+/*---Unique formatting: Published Between form----*/
+#callout-publish form li{
+	margin-bottom: 5px;
+}
+#sidebar-publish-form .field input{
+	padding-right: 20px;
+	width: 98%;
+	background: url(./img/framework/icons/calendar-button.png) no-repeat right center;
+}
+
+
+/*Submit and clear buttons for Published between widget*/
+#sidebar-publish-form li.buttons{
+	overflow: hidden;
+	padding-bottom: 5px;
+}
+
+/*2 buttons: columns*/
+#sidebar-publish-form li.buttons .submit-button{
+	width: 48%;
+	margin: 0 2% 0 0;
+	float: left;
+}
+#sidebar-publish-form li.buttons .clear-button{
+	width: 48%;
+	float: left;
+}
+#sidebar-publish-form li.buttons input{
+	font-family: open_sanssemibold;
+	text-transform: uppercase;
+}
+/*Common formatting for buttons*/
+#sidebar-publish-form li.buttons input{
+	background: url(data:image/gif;base64,R0lGODlhAQAYAMQAAOvr6b64tNTQzcW/u+Pg3ubj4dfT0M3IxeDd27Orprewq93Z18rFwejm5MfCvuzr6bWuqdrX1Oro59DMye7t7Ly1sMG7t7myrQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4zLWMwMTEgNjYuMTQ1NjYxLCAyMDEyLzAyLzA2LTE0OjU2OjI3ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXBSaWdodHM9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9yaWdodHMvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1wUmlnaHRzOk1hcmtlZD0iRmFsc2UiIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowMjgwMTE3NDA3MjA2ODExOERCQkY1MDAwMUQ2MkI4MSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoyNTgyRjVDNDg2RjgxMUUzQUQ5REFGNEYxRkNCQUZBMSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoyNTgyRjVDMzg2RjgxMUUzQUQ5REFGNEYxRkNCQUZBMSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RUE0MDFBNkM1MTIyNjgxMTgyMkE5MTA4NEQ5Nzg3NkMiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDpkOGJjODAzMi1kZmY3LTExZTItOTFjZi1kZTBlYzU0ODk3ZmQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4B//79/Pv6+fj39vX08/Lx8O/u7ezr6uno5+bl5OPi4eDf3t3c29rZ2NfW1dTT0tHQz87NzMvKycjHxsXEw8LBwL++vby7urm4t7a1tLOysbCvrq2sq6qpqKempaSjoqGgn56dnJuamZiXlpWUk5KRkI+OjYyLiomIh4aFhIOCgYB/fn18e3p5eHd2dXRzcnFwb25tbGtqaWhnZmVkY2JhYF9eXVxbWllYV1ZVVFNSUVBPTk1MS0pJSEdGRURDQkFAPz49PDs6OTg3NjU0MzIxMC8uLSwrKikoJyYlJCMiISAfHh0cGxoZGBcWFRQTEhEQDw4NDAsKCQgHBgUEAwIBAAAh+QQAAAAAACwAAAAAAQAYAAAFFCBAPVJTEMgSGcJ0MM5gBdWlQEkIADs=) repeat-x left top #b3aba6;
+	border: 1px solid #e3e3e1;
+	border-radius: 20px;
+	text-align: center;
+	-moz-box-shadow:2px 2px 4px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow:2px 2px 4px rgba(0, 0, 0, 0.2);
+	box-shadow:2px 2px 4px rgba(0, 0, 0, 0.2);
+	width: 100%;
+	padding: 3px 0;
+	text-shadow:1px 1px 0px #dddad7;
+}
+#sidebar-publish-form li.buttons input:hover{
+	background: url(data:image/gif;base64,R0lGODlhAQAYAMQAAOvr6b64tNTQzcW/u+Pg3ubj4dfT0M3IxeDd27Orprewq93Z18rFwejm5MfCvuzr6bWuqdrX1Oro59DMye7t7Ly1sMG7t7myrQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4zLWMwMTEgNjYuMTQ1NjYxLCAyMDEyLzAyLzA2LTE0OjU2OjI3ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo2RDNGMEMyNDg3Q0MxMUUzQUUwNUM1MDZBN0E3NjlGRSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo2RDNGMEMyNTg3Q0MxMUUzQUUwNUM1MDZBN0E3NjlGRSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjZEM0YwQzIyODdDQzExRTNBRTA1QzUwNkE3QTc2OUZFIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjZEM0YwQzIzODdDQzExRTNBRTA1QzUwNkE3QTc2OUZFIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAAAEAGAAABRRgAilXFViDwxyTYEQLQhSN9FBACAA7) repeat-x left bottom #b3aba6;
+}
+/*=================================================================
+Media Queries
+=================================================================*/
+/* Smaller than standard 960 (devices and browsers) */
+@media only screen and (max-width: 959px) {
+	/*--------------------------------------------------------------
+	Main Framework
+	--------------------------------------------------------------*/
+	/*Main nav revisions*/
+	#main-nav ul li a{
+		padding: 3px 5px;
+		font-size: 11px;
+	}
+	#main-nav li.sublink > a span{
+		background-image: none;
+		padding: 0;
+	}
+	/*--------------------------------------------------------------
+	Specific pages: Stories
+	--------------------------------------------------------------*/
+	/*Red button*/
+	.gray-bg-texture .red-button{
+		padding: 5px;
+	}
+}
+
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	 .resp-fix{ 
+ 		 margin:0 20px 0 508px;    
+  	 } 
+   
+         .resp-fix h1{ 
+  		font-size:30px !important;  
+  	 }
+}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px) {
+	/*--------------------------------------------------------------
+	Framework
+	--------------------------------------------------------------*/
+	/*Masthead*/
+	#masthead,
+	#framework-logo .tile{
+		background-position: 0px -16px;
+	}
+	#framework-logo .tile .rt{
+		height: 76px;
+		overflow: hidden;
+	}
+	#framework-logo .logo{
+		padding-top: 6px;
+		float: left;
+	}
+	#menu-button{
+		display: block;
+	}
+	/*Content area*/
+	#content{
+		border-top: none;
+	}
+
+	#single-callouts.bg-yellow-stripes .side-line{
+		border-top: 1px dashed #fcf1de;
+		border-left: none;
+		padding-left: 0;
+		padding-top: 10px;
+	}
+
+	/*Donate page*/
+	.resp-fix{ 
+   		margin:0 20px 0 10px !important;    
+  	}
+
+	/*Footer*/
+	#framework-footer .copyright p{
+		margin: 12px 0 0 0;
+		text-align: center;
+	}
+	#framework-footer .callouts{
+		padding: 0;
+	}
+	#framework-footer .social-media{
+		text-align: center;
+		margin: 6px 0;
+	}
+	#framework-footer .social-media ul.ul-design{
+		float: none;
+		display: inline-block;
+	}
+	#framework-footer .social-media ul.ul-design li{
+		display: inline;
+	}
+	/*Side social media*/
+	#side-social-media{
+		display: none;
+	}
+	/*--------------------------------------------------------------
+	Mobile divider
+	--------------------------------------------------------------*/
+	.mobile.content-divider{
+		display: block;
+	}
+
+	/* gray background callout */
+
+	.gray-bg-texture strong{
+		margin-bottom: 0;
+	}
+	.gray-bg-texture .black-links{
+		margin-top: 0;
+	}
+	.gray-bg-texture .red-button{
+		padding: 10px 20px;
+	}
+
+	/*--------------------------------------------------------------
+	Specific pages: Contact Us
+	--------------------------------------------------------------*/
+	.contact-us-page #page-id h1{
+		margin-bottom: 0;
+	}
+	.addresses h2,
+	.contact-form{
+		border-top: 1px solid #7b6e65;
+		color: #2e2e2e;
+		padding-top: 1em;
+	}
+	.contact-form{
+		margin-top: 1em;
+	}
+	.contact-form h2{
+		color: #2e2e2e;
+		font-size: 12px;
+	}
+	/*--------------------------------------------------------------
+	Specific pages: Branches
+	--------------------------------------------------------------*/
+	.branch-map{
+		overflow: hidden;
+	}
+	.branch-map img{
+		border-bottom: none;
+		border-right: 1px solid #d6d6d6;
+		width: 45%;
+		float: left;
+	}
+	.branch-map .data{
+		overflow: hidden;
+	}
+	/*--------------------------------------------------------------
+	Specific pages: Need Food
+	--------------------------------------------------------------*/
+	#need-food-returns .address,
+	#need-food-returns .details{
+		width: 100%;
+		float: none;
+	}
+	/*--------------------------------------------------------------
+	Specific pages: Stories
+	--------------------------------------------------------------*/
+	/*--------------------------------------------------------------
+	Specific pages: News - Archive
+	--------------------------------------------------------------*/
+	/*Sort columns*/
+	#news-archive .sort ul li.col-07{
+		float: left;
+		clear: left;
+	}
+	/*--------------------------------------------------------------
+	Specific pages: Donate
+	--------------------------------------------------------------*/
+	.resp-fix{ 
+   		margin:0 20px 0 54px !important;    
+  	}
+	.nwp{
+		background-position: -482px 0px !important; 
+	}
+	.custom-donation-form_wrapper.gform_wrapper input[type="submit"] {
+		width: 181px !important;
+	}
+}
+
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (min-width: 480px) and (max-width: 767px) {}
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {
+
+	/*--------------------------------------------------------------
+	Specific pages: Need Food (to keep text in submit button frow wrapping
+	--------------------------------------------------------------*/
+	#need-food-form .input{
+		width: 50%;
+	}
+	#need-food-form .submit{
+		width: 47%;
+	}
+
+	/*--------------------------------------------------------------
+	Specific pages: News - Archive
+	--------------------------------------------------------------*/
+	/*Sort columns*/
+	#news-archive .sort ul li.col-04{
+		clear: left;
+		padding-left: 0;
+	}
+	/*--------------------------------------------------------------
+	Specific pages: News - Article
+	--------------------------------------------------------------*/
+	#news-article .return-and-share .return{
+		width: 98%;
+		float: none;
+	}
+	#news-article .return-and-share .share{
+		float: none;
+		width: 100%;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box
+	}
+
+	/*--------------------------------------------------------------
+	Specific pages: Donate
+	--------------------------------------------------------------*/
+
+	.resp-fix h1{ 
+   		font-size:26px !important; 
+  	} 
+     
+  	.nwp{ 
+   		background-size: cover !important; 
+  	} 
+
+	.custom-donation-form_wrapper.gform_wrapper input[type="submit"] {
+		width: 181px !important;
+	}
+  
+
+}
+
+
+
+
+/*--------------------------------------------------------------
+	Specific pages: Agency Express 3
+	--------------------------------------------------------------*/
+
+.ul-blank, .ul-design {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	overflow: hidden;
+}
+
+
+
+.daily-menus .side-line {
+	border-bottom: 1px dashed #fcf1de;
+	border-left: none;
+	padding: 0 0 1em 0;
+	margin: 1em 0 0 0;
+}
+
+
+.icon-links a {
+	display: block;
+	overflow: hidden;
+}
+
+.icon-links a .icon {
+	float: left;
+	margin: 0 5px 0 0;
+	width: 25%;
+	max-width: 49px;
+}
+
+.icon-links a .icon img {
+	width: 100%;
+	height: auto;
+}
+
+.icon-links a .details {
+	float: left;
+	width: 71%;
+	line-height: 1.2;
+	font-family: open_sanssemibold;
+}
+
+.daily-menus .details .branch {
+	font-size: 16px;
+	display: block;
+	margin-top: .3em;
+}
+
+.daily-menus .details .menu {
+	font-size: 14px;
+	display: block;
+}
+
+.daily-menus li {
+	padding: 0 0 1em 0;
+	margin: 1em 0 0 0;
+}
+
+#text-26 .widgettitle{
+	margin-bottom: 0;
+}
+
+.donated-thank-you{
+	min-height: 400px;
+}
+
+/*--------------------------------------------------------------
+	Specific pages: Donate
+	--------------------------------------------------------------*/
+
+.gf_right_half label{
+	text-shadow: 1px 1px 2px #acacac;
+	font-size: 14px;
+}
+
+.gf_right_half .ginput_container{
+	margin-top: 10px;
+}
+
+#field_11_3 label{
+	text-shadow: none !important; font: 12px/1.6 open_sansbold, Arial, Helvetica, sans-serif !important; margin: 0 !important;
+}
+
+#field_11_3 .ginput_container{
+	margin-top: 0px !important;
+}
+
+.resp-fix{ 
+ 	margin:0 20px 0 508px; 
+ 	padding-top:18px; 
+}
+
+.ginput_full input, .ginput_container input{
+	background: url(../mdfoodbank/img/framework/backgrounds/form-field.png) repeat-x 10px !important;
+	height: 12px;
+	color: #7B6E65 !important;
+}
+
+.ginput_container select, .ginput_full select{
+	background: url(../mdfoodbank/img/framework/backgrounds/select.png) no-repeat right !important;
+	height: 24px;
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+	color: #2e2e2e;
+	font-family: open_sansbold, Arial, Helvetica, sans-serif;
+}
+
+.gfield_checkbox input[type="checkbox"]{
+	background: none !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+}
+
+#input_11_43, #input_8_5{
+	color: #2e2e2e !important;
+	font-family: open_sansbold, Arial, Helvetica, sans-serif;
+}
+
+#field_11_33 .ginput_container{
+	margin-top: 0px;
+}
+
+.contact-form .ginput_full input, .contact-form .ginput_container input, .volunteer-form-container .ginput_full input, .volunteer-form-container .ginput_container input{
+	height: inherit !important;
+	background: #ffffff !important;
+}
+
+.contact-form .ginput_container select, .contact-form .ginput_full select, .volunteer-form-container .ginput_full select, .volunteer-form-container .ginput_container select{
+	background: #ffffff !important;
+	height: inherit !important;
+	padding-top: inherit !important;
+	padding-bottom: inherit !important;
+	color: inherit !important;
+	font-family: inherit !important;
+}
+
+
+#gform_fields_11 select::-ms-expand, #gform_fields_8 select::-ms-expand {
+    display: none;
+}
+
+.content-email-subscribe input{
+	height: inherit !important;
+}

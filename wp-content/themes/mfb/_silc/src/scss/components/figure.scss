@@ -1,0 +1,38 @@
+figure {
+	&.wp-caption {
+		border-radius: $border-radius;
+		overflow: hidden;
+		margin-bottom: 1.5em;
+		max-width: 100%;
+		position: relative;
+
+		&:after {
+			display: block;
+			position: relative;
+			background-image: linear-gradient(-180deg,transparent 0%,rgba(0,0,0,.84) 80%);
+			margin-top: -150px;
+			height: 150px;
+			width: 100%;
+			content: '';
+			opacity: 0.79;
+		}
+		img[class*="wp-image-"] {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			display: block !important;
+		}
+
+		.wp-caption-text {
+			z-index: 1;
+			margin: 0.8075em 0;
+			color: #FFF;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			text-align: left;
+			padding: rem(10) rem(20);
+		}
+	}
+}

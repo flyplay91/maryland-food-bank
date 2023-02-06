@@ -1,0 +1,7 @@
+.mfb-style {
+  &--boxed {
+    background: $content-header-bg;
+    border-radius: $border-radius;
+    padding: rem(20);
+  }
+}

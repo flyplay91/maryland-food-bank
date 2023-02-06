@@ -1,0 +1,27 @@
+.et_pb_video_play {
+  background: $yellow;
+  border-radius: 50%;
+  width: rem(50);
+  height: rem(50);
+  text-align: center;
+  vertical-align: middle;
+  @include media($mobile-break) {
+    width: rem(120);
+    height: rem(120);
+  }
+  &:before {
+    @include icon();
+    content: "\e908";
+    color: $white;
+    font-size: rem(19);
+    position: relative;
+    left: 3px;
+    top: -7px;
+    @include media($mobile-break) {
+      font-size: rem(47);
+      position: relative;
+      left: 6px;
+      top: 0;
+    }
+  }
+}

@@ -1,0 +1,192 @@
+.silc-offcanvas {
+  margin-top: rem(78);
+  z-index: 1000;
+  overflow: scroll;
+ .js & {
+    visibility: visible;
+  }
+
+	.offc-navs-container {
+		height: calc(100vh - 4.875rem - .625rem - 63px);
+		overflow-y: auto;
+		padding-bottom:rem(40);
+		margin-top: .625rem;
+		-webkit-overflow-scrolling: touch;
+	}
+
+  @include media ($mobile-break) {
+    display: none;
+  }
+  .donate-button {
+    background: $yellow;
+    width: 100%;
+    padding: rem(20);
+    position: absolute;
+    bottom: rem(78);
+    text-align: center;
+    font-size: rem(16);
+    line-height: rem(23);
+    font-weight: 700;
+    color: $base-font-color;
+    text-decoration: none;
+  }
+  &__trigger {
+    padding: rem(0) rem(15);
+
+    color: $black;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: rem(30);
+    font-weight: 700; // 600
+    text-decoration: none;
+    @include media ($mobile-break) {
+      margin-top: 0;
+      padding: rem(20);
+    }
+    &:hover {
+      color: $red;
+      text-decoration: none;
+    }
+    &:after {
+      @include icon();
+      content: "\e907";
+      // padding-left: 3px;
+      // padding-right: 3px;
+      position: relative;
+      // top: 1px;
+      font-size: rem(25);
+    }
+    &.main-search__trigger {
+      &:after {
+        content: "\e90a";
+        font-size: rem(22);
+        // top: -2px;
+      }
+    }
+  }
+
+  .main-menu {
+    margin-top: rem(0);
+    .silc-nav {
+      background: $menu-mobile-bg;
+      &__items {
+        .silc-nav {
+          &__items {
+            background: $menu-mobile-bg;
+            padding-bottom: rem(20);
+          }
+        }
+      }
+      &__item {
+        background-color: $gray6;
+        margin-bottom: rem(5);
+        &:hover {
+          background-color: $yellow;
+          span {
+            &:after {
+              // color: $white;
+            }
+
+          }
+        }
+        a {
+          padding: rem(16) rem(24);
+          text-transform: uppercase;
+          font-weight: 700;
+          font-size: rem(20);
+          line-height: rem(28);
+          letter-spacing: 0.12px;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+        // Second level items
+        .silc-nav {
+          &__item {
+            margin: 0;
+            background: $menu-mobile-bg;
+
+            a {
+              text-transform: none;
+              font-weight: 700;
+              font-size: rem(15);
+              line-height: rem(33);
+              letter-spacing: 0px;
+              padding-top: rem(0);
+              padding-bottom: rem(0);
+            }
+          }
+        }
+
+      }
+			&__move--back {
+        margin-bottom: 5px;
+        position: relative;
+				padding: rem(18) rem(25);
+				font-weight: 700;
+				font-size: em(20);
+				// border-bottom: 1px solid $menu-border;
+				// border-top: 1px solid $menu-border;
+				transition: 0.2s;
+				&:before {
+					position: absolute;
+					@include icon();
+					content: "\e900";
+					font-size: rem(14);
+					// font-weight: 400;
+					left: 8px;
+					top: 23px;
+				}
+				&:hover {
+          // background-color: #fff;
+          &:before {
+            transition: all 0.2s ease-in-out;
+            transform: translateX(-2px);
+          }
+				}
+			}
+			&__move--forward {
+				font-size: 0px;
+				display: flex;
+				align-items: center;
+				background-color: $menu-mobile-bg;
+				transition: 0.2s;
+				&:after {
+					content: "\e901";
+					@include icon();
+					// color: $black;
+					font-size: rem(14);
+					padding-left: rem(20);
+					padding-right: rem(20);
+				}
+				&:hover {
+          // background-color: $red;
+          &:after {
+            transition: all 0.2s ease-in-out;
+            transform: translateX(2px);
+          }
+				}
+			}
+		}
+  }
+  .utility-menu {
+    @include list-reset();
+    padding: rem(10) rem(25);
+    li {
+
+      a {
+        color: $gray4;
+        padding: rem(4) 0;
+        display: block;
+        text-decoration: none;
+        font-weight: 700; // 600
+        font-size: rem(18);
+        line-height: rem(34);
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+  }
+}

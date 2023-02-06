@@ -1,0 +1,87 @@
+
+.breadcrumbs {
+  font-weight: 700; // 600
+  font-size: rem(13);
+  line-height: rem(19);
+  @include media($mobile-break) {
+    font-weight: 700;
+    font-size: rem(16);
+    line-height: rem(23);
+  }
+  a {
+    color: $base-font-color;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .divider {
+    color: transparent;
+    padding: rem(0) rem(5) rem(0) rem(5);
+    position: relative;
+    right: -5px;
+    &:before {
+      @include icon();
+      content: "\e901";
+      color: $base-font-color;
+      font-size: rem(10);
+
+    }
+    @include media($mobile-break) {
+      padding: rem(0) rem(7) rem(0) rem(7);
+      &:before {
+        content: "\e906";
+        color: $base-font-color;
+        font-size: rem(14);
+      }
+    }
+  }
+  .breadcrumb_last {
+    color: $red;
+  }
+}
+// .breadcrumbs {
+//   background-color: $maroon;
+//   display: none;
+//   margin: 0;
+//   padding: rem(0) rem(15);
+//   @include media('800') {
+//     display: inline-block;
+//   }
+//   li {
+//     display: inline-block;
+//     list-style-type: none;
+
+//     &:last-of-type {
+//       font-weight: bold;
+//       color: $breadcrumb-title;
+//       a:after {
+//         display: none;
+//       }
+//     }
+//   }
+//   a {
+//     display: inline-block;
+//     padding: rem(15) rem(5);
+//     text-decoration: none;
+//     text-transform: uppercase;
+//     color: $breadcrumb-text;
+//     font-size: rem(13);
+//     line-height: rem(18);
+//     letter-spacing: 1.24px;
+//     @include media('800') {
+//       font-size: rem(14);
+//       line-height: rem(18);
+//       letter-spacing: 1.24px;
+//     }
+
+//     &:hover {
+//       text-decoration: underline;
+//     }
+//     &:after {
+//       content: '|';
+//       padding-left: rem(10);
+//       display: inline-block;
+//     }
+//   }
+// }

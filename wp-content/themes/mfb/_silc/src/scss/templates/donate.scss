@@ -1,0 +1,535 @@
+// Donate page specific css.
+body.page-id-23630,
+body.page-template-page-donate {
+  .header {
+    &__main {
+      flex-direction: column;
+      @include media($mobile-break) {
+        flex-direction: row;
+      }
+    }
+    &__logo {
+      img {
+        width: rem(115);
+        @include media($mobile-break) {
+          width: rem(220);
+        }
+      }
+    }
+    &__title {
+      font-family: $sans-serif-alt;
+      font-weight: 700;
+      font-size: rem(50);
+      line-height: rem(60);
+      letter-spacing: -1.39px;
+      display: none;
+      @include media ($mobile-break) {
+        display: block;
+      }
+
+    }
+  }
+  .footer {
+    margin-bottom: 0;
+  }
+  .layout-content {
+    padding-top: rem(80);
+
+  }
+  .content-area {
+
+  }
+  .content-header {
+    @include media($mobile-break) {
+      display: none;
+    }
+    h1 {
+      font-family: $sans-serif-alt;
+      font-weight: 700;
+      font-size: rem(32);
+      line-height: rem(41);
+      letter-spacing: -0.99px;
+      margin-bottom: 0;
+    }
+  }
+  .section--donation-wrapper {
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: $base-font-color;
+
+    @media screen and (max-width: $mobile-break-max + 'px') {
+
+      background-image: none !important;
+    }
+    @include media($mobile-break) {
+      padding-top: rem(60);
+      padding-bottom: rem(100);
+    }
+    .donation-image {
+      background-position: center top;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      min-height: rem(300);
+      @include media($mobile-break) {
+        display: none;
+      }
+      img {
+        display: none;
+        width: 100%;
+
+      }
+
+    }
+  }
+  .donation-content {
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    @include media($mobile-break) {
+      width: 50%;
+    }
+    > h2 {
+      color: $white;
+      font-size: rem(26);
+      line-height: rem(29);
+      margin-top: rem(40);
+      @include media($mobile-break) {
+        text-shadow: 0 0 10px rgba(0,0,0,0.40);
+        margin-top: 0;
+      }
+    }
+    > p {
+      color: $white;
+      margin-bottom: rem(40);
+      @include media($mobile-break) {
+        text-shadow: 0 0 10px rgba(0,0,0,0.40);
+        margin-bottom: 0;
+      }
+    }
+  }
+  .donation-form_wrapper {
+    order: -1;
+    @include media($mobile-break) {
+      order: 1;
+    }
+  }
+  .donation-form {
+    @include media($mobile-break) {
+      margin-top: rem(40);
+    }
+  }
+  .section--footer {
+    text-align: center;
+    @include media($mobile-break) {
+      text-align: left;
+    }
+  }
+}
+
+body.et-pb-theme-maryland.food.bank #et-boc .donation-form-wrapper,
+.donation-form_wrapper {
+  position: relative;
+  margin-left: -20px;
+  margin-right: -20px;
+  @include media($mobile-break) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+body.et-pb-theme-maryland.food.bank #et-boc .donation-form,
+.donation-form {
+  position: relative;
+  background: $white;
+
+  overflow: hidden;
+  box-shadow: $shadow-diffuse;
+  width: 100%;
+
+  @include media($mobile-break) {
+    border-radius: $border-radius;
+  }
+  .validation_error {
+    background: $red;
+    padding: rem(30);
+    text-align: center;
+    color: $white;
+    font-size: rem(14);
+  }
+  .validation_message {
+    color: $red;
+    // margin-top: rem(8);
+    font-size: rem(14);
+  }
+  .gform_heading {
+    display: none;
+  }
+  &__header {
+    background: $gray6;
+    padding: rem(15);
+    @include media($mobile-break) {
+      padding: rem(28) rem(46);
+    }
+    h3 {
+      margin: 0;
+      padding: 0;
+      color: $gray4;
+      font-weight: 700;
+      font-size: rem(14);
+      line-height: rem(13.24);
+      @include media ($mobile-break) {
+        font-size: rem(26);
+        line-height: rem(29);
+      }
+    }
+    span {
+      position: absolute;
+      top: 18px;
+      right: 16px;
+      color: $gray4;
+      font-weight: 700;
+      font-size: rem(12);
+      line-height: rem(10.89);
+      letter-spacing: -0.16px;
+      @include media ($mobile-break) {
+        top: 32px;
+        right: 36px;
+        font-size: rem(20);
+        line-height: rem(23.85);
+        letter-spacing: -0.26px;
+      }
+    }
+  }
+  .gform_body {
+    padding: rem(30);
+  }
+  .gform_page_footer {
+    margin-top: rem(30);
+    display: flex;
+    .button {
+      // @include form-button-alt($yellow, $red, $base-font-color, $white);
+      // @include form-button-alt($white, $red, $base-font-color, $white);
+      margin-right: rem(10);
+      &.gform_previous_button {
+        background: $gray6;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    input[type="button"] {
+      @include form-button-alt($yellow, $brand-red, $base-font-color, $white);
+    }
+    input[type="submit"] {
+      @include form-button-alt($red, $brand-red, $white, $white);
+    }
+  }
+  .gfield {
+    margin-bottom: rem(10);
+    list-style: none;
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"] {
+      @include form-input();
+    }
+    input[type="checkbox"] {
+      appearance: none;
+      background-color: $brand-red;
+      display: inline-block;
+      position: relative;
+      height: rem(22);
+      width: rem(22);
+      margin-right: rem(10);
+      flex-shrink: 0;
+      text-align: center;
+      top: 5px;
+      // input[type="checkbox"]:active,
+      // input[type="checkbox"]:checked:active {}
+      &:checked {
+        background-color: $brand-red;
+        color: white;
+      }
+      &:checked:after {
+        @include icon();
+        content: "\e911";
+        font-size: rem(14);
+        line-height: rem(22);
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        text-align: center;
+        color: $white;
+      }
+    }
+
+    input[type="radio"] {
+      appearance: none;
+      flex-shrink: 0;
+      background-color: $brand-red;
+      display: inline-block;
+      position: relative;
+      height: rem(22);
+      width: rem(22);
+      margin-right: rem(10);
+      border-radius: 50%;
+      text-align: center;
+      top: 5px;
+      // input[type="checkbox"]:active,
+      // input[type="checkbox"]:checked:active {}
+      &:checked {}
+      &:checked:after {
+        content: '';
+        background: $white;
+        position: relative;
+        margin: 0 auto;
+        display: block;
+        width: rem(10);
+        border-radius: 50%;
+        height: rem(10);
+        top: calc(50% - 5px);
+        text-align: center;
+        color: $white;
+      }
+    }
+    select {
+      @include form-select();
+    }
+  }
+  .gfield_label {
+    @include form-label($base-font-color);
+    display: block;
+  }
+  .gform_fields {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .gfield_description {
+    margin-top: rem(10);
+  }
+  .ginput_container {
+    // margin-bottom: rem(10);
+  }
+  // Name Field
+  .ginput_container_name {
+    display: flex;
+    flex-direction: column;
+    @include media($mobile-break) {
+      flex-direction: row;
+    }
+    > span {
+      margin-bottom: rem(10);
+      &:last-child {
+        margin-bottom: 0;
+      }
+      @include media($mobile-break) {
+        margin-right: rem(10);
+      }
+      label {
+        @include form-label($base-font-color);
+      }
+    }
+  }
+  // Address Field
+  .ginput_container_address {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    @include media($mobile-break) {
+      flex-direction: row;
+    }
+    > span {
+      margin-bottom: rem(10);
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      label {
+        display: block;
+        margin-bottom: rem(5);
+        @include form-label($base-font-color);
+      }
+    }
+
+    .address_line_1 {
+      width: 100%;
+    }
+    .address_city {
+      @include media($mobile-break) {
+        width: 45%;
+        padding-right: rem(10);
+      }
+    }
+    .address_state {
+      @include media($mobile-break) {
+        width: 35%;
+        padding-right: rem(10);
+      }
+    }
+    .address_zip {
+      margin-bottom: 0;
+      @include media($mobile-break) {
+        width: 20%;
+      }
+    }
+  }
+  // Credit Card
+  .ginput_container_creditcard {
+    display: flex;
+    flex-direction: column;
+    > span {
+      margin-bottom: rem(10);
+      &:last-child {
+        margin-bottom: 0;
+      }
+      label {
+        display: block;
+        margin-bottom: rem(5);
+        @include form-label($base-font-color);
+      }
+    }
+    .ginput_cardextras {
+      display: flex;
+    }
+  }
+  .gfield_creditcard_warning_message {
+    color: $brand-red;
+    margin-bottom: rem(20);
+  }
+  .gform_card_icon_container {
+    display: none;
+    label {
+
+    }
+  }
+  .ginput_cardextras {
+    display: flex;
+    width: 100%;
+    label {
+      @include form-label($base-font-color);
+    }
+  }
+  .ginput_cardinfo_left {
+    width: 100%;
+    select {
+      margin-right: rem(10);
+    }
+
+  }
+  .ginput_card_expiration_container {
+    // display: flex;
+    // width: 100%;
+    select {
+      display: inline-block;
+      width: calc(50% - 15px);
+    }
+
+  }
+  // #field_34_52 .gfield_label {
+  //   display:none;
+  // }
+  .gfield_checkbox,
+  .gfield_radio {
+    margin: 0;
+    list-style-type: none;
+    padding: 0;
+    li {
+      list-style: none;
+      margin-bottom: rem(20);
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .radios-as-toggles {
+    .gfield_radio {
+      display: flex;
+      li {
+        width: 100%;
+      }
+    }
+  }
+  .radios-as-toggles,
+  .radios-as-buttons {
+    .gfield_radio {
+      padding-left: 0;
+      display: flex;
+      list-style-type: none;
+      li {
+        width: 100%;
+        margin-left: -2px;
+        &:first-child {
+          label {
+            border-top-left-radius: $border-radius;
+            border-bottom-left-radius: $border-radius;
+          }
+
+        }
+        &:last-child {
+          label {
+            border-top-right-radius: $border-radius;
+            border-bottom-right-radius: $border-radius;
+          }
+
+        }
+        label {
+
+          font-weight: 700;
+          font-size: rem(14);
+          line-height: rem(21);
+          padding: rem(12) rem(4);
+          transition: background 0.2s;
+
+          width: auto;
+          border: 2px $gray11 solid;
+          // border-radius: $border-radius;
+          color: $gray11;
+          background: $gray10;
+          text-align: center;
+          display: block;
+          cursor: pointer;
+          font-size: rem(14);
+          &:hover {
+            // border-color: $red;
+            border: 2px $base-font-color solid;
+            background: $brand-red;
+            color: $white;
+            transition:0.2s;
+          }
+          &:active {
+            border-color: $brand-red;
+            background: $brand-red;
+            color: $white;
+
+          }
+          @include media($mobile-break) {
+            font-size: rem(21.6);
+            line-height: rem(33);
+            padding: rem(12) rem(6);
+          }
+        }
+        input[type="radio"] {
+          display: none;
+
+        }
+        input[type="radio"]:checked ~ label {
+          // border-color: $red;
+          border: 2px $base-font-color solid;
+          background:$brand-red;
+          color: $white;
+        }
+				/*
+        input[type="radio"]:checked + input[type="radio"] ~ label {
+	        margin-left: 0;
+	        border-left: 0;
+        }
+				*/
+      }
+    }
+  }
+}

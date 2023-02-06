@@ -1,0 +1,59 @@
+.donate-menu {
+  li {
+    background: $yellow;
+    border-radius: 14px;
+    padding: rem(10);
+    width: rem(150);
+
+    &:hover {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      ul {
+        // transition: all 0.5s ease-in-out;
+        opacity: 1;
+        visibility: visible;
+        animation: fade 0.3s;
+      }
+    }
+    a {
+      color: $gray1;
+      font-family: $sans-serif-alt;
+      font-weight: bold;
+      font-size: rem(18);
+      letter-spacing: 0;
+      line-height: rem(27);
+      text-align: center;
+    }
+  }
+  ul {
+    opacity: 0;
+    visibility: hidden;
+
+    // position: relative !important;
+    background: $yellow;
+    border-radius: 14px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    width: 100% !important;
+    li {
+      background: $white;
+      border-radius: 12px !important;;
+      width: auto !important;
+      margin: rem(10);
+      padding: rem(10);
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        background: $red;
+        color: $white;
+      }
+      a {
+        font-family: $sans-serif-alt;
+        font-weight: bold !important;
+        font-size: rem(15);
+        letter-spacing: -0.1px;
+        line-height: rem(21);
+      }
+    }
+  }
+
+}

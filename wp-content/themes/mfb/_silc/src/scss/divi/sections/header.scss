@@ -1,0 +1,29 @@
+.section--header {
+  margin-top: 0;
+  margin-bottom: 0;
+  h2 {
+    @include h1();
+    color: $base-font-color;
+    @include media($mobile-break) {
+      margin-bottom: rem(10);
+    }
+  }
+  h3 {
+    @include h2();
+  }
+  p {
+    @include lead-in();
+  }
+  .et_pb_row {
+    padding: rem(20) rem(0) rem(10);
+  }
+  .et_pb_text_inner {
+
+  }
+  &-squeeze {
+    p {
+      padding-left: rem(100);
+      padding-right: rem(100);
+    }
+  }
+}

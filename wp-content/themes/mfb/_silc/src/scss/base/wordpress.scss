@@ -1,0 +1,122 @@
+#wpadminbar {
+	position: fixed !important;
+}
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+	margin-left: 0;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+	margin-right: 0;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.admin-bar {
+	&.js {
+		.main-search {
+
+			&.silc-offcanvas--visible {
+
+			}
+		}
+		.silc-offcanvas {
+			top: 46px;
+			.donate-button {
+				bottom: rem(124);
+			}
+		}
+	}
+
+}
+
+.comment-form {
+	border-top: 1px solid $gray6;
+	padding-top: 2em;
+	margin-top: 2em;
+	label {
+		@include form-label($base-font-color);
+	}
+	textarea {
+		@include form-input();
+	}
+	input[type="text"],
+	input[type="email"],
+	input[type="url"] {
+		@include form-input();
+
+		@include media($mobile-break) {
+			max-width: rem(300);
+		}
+	}
+	.submit {
+		@include button($yellow, $base-font-color);
+	}
+}
+
+#comments{
+
+}
+/*Comments*/
+
+.comment-reply-link{
+	@include button($yellow, $base-font-color);
+	&:hover, &:active {
+		text-decoration: none;
+	}
+}
+
+h2.comments-title{
+	margin-bottom: 2em;
+}
+
+#comments > ol > li{
+	border-bottom: 1px solid #BFBFBF;
+	margin-bottom: 2em;
+	padding-bottom: 2em;
+}
+
+#comments ol{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+#comments ol ol{
+	margin: 0 0 0 2em;
+}
+#comments ol ol li{
+	padding-top: 2em;
+}
+
+#comments ol li .comment-author.vcard img{
+	float: left;
+	margin: 0 1em 0 0;
+}
+#comments ol.commentlist li .comment-author.vcard cite,
+#comments ol.commentlist li .comment-author.vcard .comment-meta.commentmetadata{
+	overflow: hidden;
+}
+#comments ol.commentlist li .comment-body p{
+	font-size: 14px;
+}
+
+h3#reply-title{
+	margin-top: 2em;
+}
+
+/*Removing side margin/padding from comments side widget*/
+.widget_recent_comments li.recentcomments{
+	padding-left: 0;
+}
+
+

@@ -1,0 +1,10 @@
+.vscode
+.idea
+node_modules
+node_modules/*
+wp-config-local.php
+wp-content/uploads
+wp-content/uploads/*
+wp-content/cache
+wp-content/wflogs
+.htaccess

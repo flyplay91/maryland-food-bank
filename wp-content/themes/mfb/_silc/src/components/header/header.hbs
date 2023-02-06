@@ -1,0 +1,34 @@
+<div class="header">
+  <div class="header__utility">
+		{{>@utility-menu}}
+		<div id="mainSearch" class="main-search">
+			<form action="" class="main-search__form">
+				<label for="mainSearchInput" class="visible-for-screen-readers">Search this Site</label>
+				<input type="text" class="main-search__input" id="mainSearchInput" placeholder="search">
+				<button type="submit" class="main-search__submit"><span class="visible-for-screen-readers">Submit</span></button>
+			</form>
+			<a class="silc-offcanvas__trigger" href="#mainSearch"><span class="visible-for-screen-readers">Toggle Search</span></a>
+			{{!-- <a class="silc-offcanvas__trigger silc-offcanvas__trigger--open" href="#mainSearch"><span class="visible-for-screen-readers">Open Search</span></a> --}}
+		</div>
+
+  </div>
+	<div class="compartment">
+		<div class="compartment--inner">
+			<div class="header__main">
+				<div class="header__logo">
+					<a href="#"><img src="{{path '/img/logo.svg'}}" alt="Maryland Food Bank"></a>
+				</div>
+				<div class="header__nav">
+					{{>@main-menu}}
+				</div>
+				<div class="header__donate">
+					{{>@donate-menu}}
+				</div>
+				<div class="header__triggers">
+					<a class="silc-offcanvas__trigger main-search__trigger" href="#mainSearch"><span class="visible-for-screen-readers">Open Search</span></a>
+					<a class="silc-offcanvas__trigger main-menu__trigger" href="#silc-offcanvas-1"><span class="visible-for-screen-readers">Open Menu</span></a>
+				</div>
+			</div>
+		</div>
+  </div>
+</div>

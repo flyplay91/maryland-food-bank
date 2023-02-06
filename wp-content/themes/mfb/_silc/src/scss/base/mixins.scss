@@ -1,0 +1,288 @@
+@mixin clearfix() {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+
+@mixin lead-in() {
+  color: $base-font-color;
+  font-weight: 700; // 600
+  font-size: rem(18);
+  line-height: rem(24);
+  @include media($mobile-break) {
+    font-size: rem(22);
+    line-height: rem(33);
+  }
+}
+
+@mixin list-reset() {
+  list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+@mixin h1() {
+  color: $base-font-color;
+  font-family: $sans-serif-alt;
+  font-weight: 700;
+  font-size: rem(36);
+  line-height: rem(41);
+  letter-spacing: -1px;
+  @include media($mobile-break) {
+    font-size: rem(72);
+    line-height: rem(82);
+    letter-spacing: -2px
+  }
+}
+
+@mixin h2() {
+  color: $base-font-color;
+  font-family: $sans-serif-alt;
+  font-weight: 700;
+  font-size: rem(25);
+  line-height: rem(41);
+  letter-spacing: -0.7px;
+  @include media($mobile-break) {
+    font-size: rem(50);
+    line-height: rem(82);
+    letter-spacing: -1.39px;
+  }
+}
+@mixin h3() {
+  color: $base-font-color;
+  font-weight: 700;
+  font-size: rem(20);
+  line-height: rem(29);
+  // letter-spacing: 0px;
+  @include media($mobile-break) {
+    font-size: rem(26);
+    line-height: rem(29);
+  }
+}
+@mixin h4() {
+  color: $base-font-color;
+  font-weight: 700;
+  font-size: rem(16);
+  line-height: rem(23.85);
+  letter-spacing: -0.21px;
+  @include media ($mobile-break){
+    font-size: rem(20);
+    line-height: rem(23.85);
+    letter-spacing: -0.26px;
+  }
+}
+@mixin button($background, $color) {
+  padding: rem(11) rem(29);
+  display: inline-block;
+  background: $background;
+  transition: all 0.2s ease-in-out;
+  border-radius: 14px;
+  font-family: $sans-serif;
+  border: 0;
+  color: $color;
+  font-weight: 700;
+  font-size: rem(13);
+  line-height: rem(19);
+  letter-spacing: 0px;
+  margin-bottom: rem(10);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: $red;
+    color: $white;
+    text-decoration: none;
+  }
+  &:after {
+    display: none;
+  }
+  @include media($mobile-break) {
+    font-size: rem(18);
+    line-height: rem(25);
+  }
+}
+@mixin button-hero($background, $color) {
+  @include button($background, $color);
+  padding: rem(15) rem(35);
+
+}
+@mixin buttons() {
+  .button {
+    @include button($yellow, $base-font-color);
+    &--hero {
+      @include button-hero($yellow, $base-font-color);
+    }
+    &--light {
+      @include button($gray7, $base-font-color);
+    }
+    &--dark {
+      @include button($green, $base-font-color);
+    }
+  }
+}
+// Normal Form buttons.
+@mixin form-label($color) {
+  display: block;
+  margin-bottom: rem(10);
+  font-family: $sans-serif;
+  font-weight: 700;
+  color: $color;
+  font-size: rem(16);
+  line-height: rem(25);
+
+  @include media($mobile-break) {
+    font-size: rem(14);
+    line-height: rem(17.5);
+  }
+}
+@mixin form-select() {
+  border-radius: 6px;
+  border: 2px solid $gray1 !important;
+  padding: rem(11) rem(35) rem(11) rem(20);
+  background: $white;
+  width: 100%;
+  color: $base-font-color;
+  font-family: $sans-serif;
+  font-weight: 700;
+  font-size: rem(16);
+  line-height: rem(25);
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIxN3B4IiBoZWlnaHQ9IjEwcHgiIHZpZXdCb3g9IjAgMCAxNyAxMCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4gICAgICAgIDx0aXRsZT5QYXRoIDU8L3RpdGxlPiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4gICAgPGRlZnM+PC9kZWZzPiAgICA8ZyBpZD0iSW50ZXJuYWxzIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4gICAgICAgIDxnIGlkPSI3LUtpdGNoZW4tU2luayIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTkxMS4wMDAwMDAsIC0zMzMyLjAwMDAwMCkiIHN0cm9rZT0iIzJCMkY0NSIgc3Ryb2tlLXdpZHRoPSIyIj4gICAgICAgICAgICA8cG9seWxpbmUgaWQ9IlBhdGgtNSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoOTE5LjUwMDAwMCwgMzMzNy4wMDAwMDApIHJvdGF0ZSgtMjcwLjAwMDAwMCkgdHJhbnNsYXRlKC05MTkuNTAwMDAwLCAtMzMzNy4wMDAwMDApICIgcG9pbnRzPSI5MTYgMzMzMCA5MjMgMzMzNy4wMTgzNiA5MTYuMDM2NjI1IDMzNDQiPjwvcG9seWxpbmU+ICAgICAgICA8L2c+ICAgIDwvZz48L3N2Zz4=);
+  background-color: $white;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 10px) center;
+  // &:focus {
+  //   outline: none;
+  // }
+}
+@mixin form-input() {
+  // opacity: 0.8;
+
+  border: 2px solid $gray1 !important;
+  border-radius: 6px;
+  border: 0;
+  padding: rem(12) rem(20);
+  background: $white;
+  width: 100%;
+  color: $base-font-color;
+  font-family: $sans-serif;
+  font-weight: 700;
+  font-size: rem(16);
+  line-height: rem(25);
+  &::placeholder {
+    opacity: 0.8;
+    color: $gray4;
+  }
+}
+@mixin form-button($background, $background-hover, $color, $color-hover) {
+  font-family: $sans-serif;
+  // // code goes in here
+  cursor: pointer;
+  border: 0;
+  background: $background;
+  border-radius: 14px;
+  font-weight: 700;
+  color: $color;
+  letter-spacing: 0.2px;
+  font-size: rem(16);
+  line-height: rem(24);
+  width: 100%;
+  text-align: center;
+  padding: rem(12) rem(20);
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: $background-hover;
+    color: $color-hover;
+  }
+  @include media($mobile-break) {
+
+  }
+}
+// Alt Form Buttons (dark)
+@mixin form-label-alt($color) {
+  display: block;
+  font-family: $sans-serif;
+  margin-bottom: rem(10);
+  font-weight: 700;
+  color: $color;
+  font-size: rem(14);
+  line-height: rem(17.5);
+  @include media($mobile-break) {
+    font-size: rem(20);
+    line-height: rem(23.85);
+    letter-spacing: -0.26px;
+  }
+}
+@mixin form-select-alt($background, $color) {
+  font-family: $sans-serif;
+  border-radius: $border-radius;
+  border: 0;
+  padding: rem(11) rem(35) rem(11) rem(20);
+  background: $background;
+  width: 100%;
+  color: $color;
+  font-weight: 700;
+  font-size: rem(16);
+  line-height: rem(25);
+  border: 0;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIyNHB4IiBoZWlnaHQ9IjE1cHgiIHZpZXdCb3g9IjAgMCAyNCAxNSIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4gICAgICAgIDx0aXRsZT5pY29uL2ljX2tleWJvYXJkX2Fycm93X2Rvd25fMjRweDwvdGl0bGU+ICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPiAgICA8ZGVmcz4gICAgICAgIDxwb2x5Z29uIGlkPSJwYXRoLTEiIHBvaW50cz0iMTYuMjI3MiAxNi45NzI4IDI1LjA0IDI1Ljc2NjQgMzMuODUyOCAxNi45NzI4IDM2LjU2IDE5LjY4IDI1LjA0IDMxLjIgMTMuNTIgMTkuNjgiPjwvcG9seWdvbj4gICAgPC9kZWZzPiAgICA8ZyBpZD0iSW50ZXJuYWxzIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4gICAgICAgIDxnIGlkPSI1LUZpbmQtRm9vZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEwMjYuMDAwMDAwLCAtNzgyLjAwMDAwMCkiPiAgICAgICAgICAgIDxnIGlkPSJBY2NvcmRpYW4tQ29weSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIzLjAwMDAwMCwgNjg5LjAwMDAwMCkiPiAgICAgICAgICAgICAgICA8ZyBpZD0iQmFzZS0rLVRvcC1CYXIiPiAgICAgICAgICAgICAgICAgICAgPGcgaWQ9Ikdyb3VwLTUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUzLjAwMDAwMCwgMzguMDAwMDAwKSI+ICAgICAgICAgICAgICAgICAgICAgICAgPGcgaWQ9Ikdyb3VwLTYiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDYyNS4wMDAwMDAsIDAuMDAwMDAwKSI+ICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxnIGlkPSJJbnB1dCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMC4wMDAwMDAsIDM2LjAwMDAwMCkiPiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPGcgaWQ9Imljb24vaWNfa2V5Ym9hcmRfYXJyb3dfZG93bl8yNHB4IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMTIuMDAwMDAwLCAyLjAwMDAwMCkiPiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxtYXNrIGlkPSJtYXNrLTIiIGZpbGw9IndoaXRlIj4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHVzZSB4bGluazpocmVmPSIjcGF0aC0xIj48L3VzZT4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L21hc2s+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHVzZSBpZD0iTWFzayIgZmlsbD0iIzAwMDAwMCIgZmlsbC1ydWxlPSJub256ZXJvIiB4bGluazpocmVmPSIjcGF0aC0xIj48L3VzZT4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8ZyBpZD0iQkcvNC1XaGl0ZSIgbWFzaz0idXJsKCNtYXNrLTIpIiBmaWxsPSIjRkZGRkZGIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8cmVjdCBpZD0iQm94IiB4PSIwIiB5PSIwIiB3aWR0aD0iNDgiIGhlaWdodD0iNDgiPjwvcmVjdD4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L2c+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L2c+ICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvZz4gICAgICAgICAgICAgICAgICAgICAgICA8L2c+ICAgICAgICAgICAgICAgICAgICA8L2c+ICAgICAgICAgICAgICAgIDwvZz4gICAgICAgICAgICA8L2c+ICAgICAgICA8L2c+ICAgIDwvZz48L3N2Zz4=);
+  background-color: $gray4;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 10px) center;
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin form-input-alt($background, $color) {
+  font-family: $sans-serif;
+  border-radius: $border-radius;
+  border-width: 0 !important;
+  padding: rem(12) rem(20);
+  background: $background;
+  width: 100%;
+  color: $color;
+  font-weight: 700;
+  font-size: rem(16);
+  line-height: rem(25);
+  &::placeholder {
+    color: $white;
+    opacity: 0.8;
+  }
+}
+@mixin form-button-alt($background, $background-hover, $color, $color-hover) {
+
+  font-family: $sans-serif;
+  cursor: pointer;
+  border: 0;
+  background: $background;
+  border-radius: 14px;
+  font-weight: 700;
+  color: $color;
+  letter-spacing: 0.2px;
+  font-size: rem(16);
+  line-height: rem(24);
+  width: 100%;
+  text-align: center;
+  padding: rem(12) rem(20);
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: $background-hover;
+    color: $color-hover;
+  }
+  @include media($mobile-break) {
+
+  }
+}

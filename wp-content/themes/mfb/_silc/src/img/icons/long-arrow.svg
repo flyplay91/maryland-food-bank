@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="12px" viewBox="0 0 21 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="105.386616 3 104.221008 4.0575 108.833843 8.25 91 8.25 91 9.75 108.833843 9.75 104.221008 13.9425 105.386616 15 112 9"></polygon>
+    </defs>
+    <g id="Internals" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="0_3_0-HOMEPAGE_REF" transform="translate(-594.000000, -1893.000000)">
+            <g id="3---" transform="translate(0.000000, 1311.000000)">
+                <g id="Flexible" transform="translate(69.000000, 171.000000)">
+                    <g id="2" transform="translate(330.000000, 0.000000)">
+                        <g id="Learn-More-CTA" transform="translate(104.000000, 408.000000)">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <use id="Shape" fill="#FFFFFF" fill-rule="nonzero" xlink:href="#path-1"></use>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

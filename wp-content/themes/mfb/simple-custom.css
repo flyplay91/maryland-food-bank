@@ -1,0 +1,553 @@
+/*
+Welcome to Custom CSS!
+
+CSS (Cascading Style Sheets) is a kind of code that tells the browser how
+to render a web page. You may delete these comments and get started with
+your customizations.
+
+By default, your stylesheet will be loaded after the theme stylesheets,
+which means that your rules can take precedence and override the theme CSS
+rules. Just write here what you want to change, you don't need to copy all
+your theme's stylesheet content.
+*/
+#page-id h1 {
+	line-height: 1.2em;
+	margin-top: 4px;
+}
+
+.font-size-10px {
+	font-size: 10px;
+}
+
+.font-size-9px {
+	font-size: 9px;
+}
+
+#side-social-media {
+	left: -1px;
+}
+
+aside.widget-container.padding-bottom-1.side-line {
+	overflow: hidden;
+}
+
+.form-allowed-tags {
+	display: none;
+}
+
+.tp-rightarrow.large, .tp-leftarrow.large {
+	margin-left: 0;
+}
+
+.gray-bg-texture {
+	padding: 1em;
+}
+
+.gmw-pagination {
+	color: #7B6E65;
+	font: 10px/1.6 open_sanssemibold_italic, Arial, Helvetica, sans-serif;
+	margin-top: 8px;
+}
+
+.pages {
+	color: #7B6E65;
+	font: 10px/1.6 open_sanssemibold_italic, Arial, Helvetica, sans-serif;
+	margin-bottom: 24px;
+	margin-top: 4px;
+}
+
+li.details {
+	padding: 0;
+}
+
+#steps {
+	width: 100%;
+	height: 18px;
+	position: relative;
+	margin: 20px auto 30px;
+}
+
+#steps .bar {
+	width: 100%;
+	height: 1px;
+	position: relative;
+	top: 6px;
+	left: 0;
+	background: #CCC;
+	-webkit-border-radius: 1px;
+	-moz-border-radius: 1px;
+	border-radius: 1px;
+	-webkit-box-shadow: 0 1px 0 0 #fff;
+	-moz-box-shadow: 0 1px 0 0 #fff;
+	box-shadow: 0 1px 0 0 #fff;
+}
+
+input[type="range"] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background-color: #333;
+	height: 2px;
+}
+
+input[type="range"]:focus {
+	outline: none;
+}
+
+input[name="steps1"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	position: relative;
+	top: 0;
+	z-index: 63;
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	border: none;
+	background: url('/wp-content/uploads/2014/06/icon-step1.png') no-repeat;
+}
+
+input[name="steps2"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	position: relative;
+	top: 0;
+	z-index: 63;
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	border: none;
+	background: url('/wp-content/uploads/2014/06/icon-step2.png') no-repeat;
+}
+
+input[name="steps3"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	position: relative;
+	top: 0;
+	z-index: 63;
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	border: none;
+	background: url('/wp-content/uploads/2014/06/icon-step3.png') no-repeat;
+}
+
+::-webkit-slider-thumb, ::-moz-range-thumb, ::-ms-thumb {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background-color: #000;
+	width: 10px;
+	height: 20px;
+}
+
+.custom-donation-form_wrapper.gform_wrapper input:focus, .custom-donation-form_wrapper.gform_wrapper select:focus {
+	border: 1px solid #55BDBA;
+}
+
+#gform_submit_button_8 {
+	padding: 10px 0;
+}
+
+#field_8_5 {
+	margin-bottom: 6px;
+}
+
+.input-overlay span {
+	padding-left: 6px;
+}
+
+#home-callouts, #single-callouts {
+	padding-bottom: 0 !important;
+}
+
+#gform_submit_button_6 {
+	margin-top: 20px;
+}
+
+#gform_submit_button_3 {
+	margin-top: 10px;
+}
+
+#label_7_1 {
+	margin-left: 6px;
+}
+
+div.gmw-pt-default-form-wrapper input[type="text"] {
+	padding: 5px 8px !important;
+}
+
+.rss a {
+	background-position: 0 4px;
+}
+
+#site-search .search-box form .input-overlay span, #site-search .search-box form .input-overlay input {
+	padding-left: 6px;
+}
+
+.ended {
+	margin: 0 0 18px;
+	padding: 20px 20px 12px;
+	background: #95B03C;
+	text-align: center;
+	color: #fff;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 8px 0 0 #7f972d;
+	-moz-box-shadow: 0 8px 0 0 #7f972d;
+	box-shadow: 0 8px 0 0 #7f972d;
+}
+
+.archive .sort, .single .return-and-share {
+	background: #d7d3d1 url('http://www.mdfoodbank.org/wp-content/themes/mdfoodbank/img/framework/backgrounds/gray-striped-bg.gif') repeat-x 0 -80px;
+	border-radius: 0;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	border-bottom: 1px solid #bfbfbf;
+}
+
+.recent-posts .recent-post-item {
+	padding-bottom: 0;
+}
+
+.actionimg {
+	background: #e0162b;
+}
+
+.actionimg img:hover {
+	opacity: .4;
+	-webkit-transition: all .4s ease;
+	-moz-transition: all .4s ease;
+	-o-transition: all .4s ease;
+	-ms-transition: all .4s ease;
+	transition: all .4s ease;
+}
+
+.action-link {
+	font-family: Arial-black;
+	font-size: 22px;
+	line-height: 1em;
+	margin-bottom: 6px;
+	color: #EF3124;
+}
+
+.action-link:hover {
+	text-decoration: none;
+	color: #8a0311;
+	-webkit-transition: all .4s ease;
+	-moz-transition: all .4s ease;
+	-o-transition: all .4s ease;
+	-ms-transition: all .4s ease;
+	transition: all .4s ease;
+}
+
+.action-link2 {
+	font-family: open_sansitalic;
+	font-size: 18px;
+	line-height: 1em;
+	margin-bottom: 6px;
+	color: #aba7a4;
+}
+
+.action-link2:hover {
+	text-decoration: none;
+	color: #8a0311;
+	-webkit-transition: all .4s ease;
+	-moz-transition: all .4s ease;
+	-o-transition: all .4s ease;
+	-ms-transition: all .4s ease;
+	transition: all .4s ease;
+}
+
+.action-cols {
+	text-align: center;
+	font-family: open_sansitalic;
+	color: #aba7a4;
+}
+
+#input_32_5_3, #input_32_5_6 {
+	width: 40%;
+	padding: 10px 20px 10px 10px;
+	background-color: #fff !important;
+	background-image: none !important;
+	border-radius: 10px;
+}
+
+#input_32_3 {
+	padding: 10px 20px 10px 10px;
+	background-color: #fff !important;
+	background-image: none !important;
+	border-radius: 10px;
+}
+
+#input_32_4 {
+	margin-bottom: 12px;
+	padding: 5px 10px 5px 15px;
+	background-color: #FFF;
+	-moz-box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+	-webkit-box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+	box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+	border-radius: 10px;
+	border: 1px solid #E3E3E1;
+	overflow: hidden;
+	width: 90%;
+	color: #a9a9a9 !important;
+}
+
+#gform_submit_button_32 {
+	padding: 10px 30px;
+}
+
+.food-safety-recalls-post h2 {
+	font: 1.25em open_sansbold, Arial, Helvetica, sans-serif;
+}
+
+.archive article.food-safety-recalls-post header h1 {
+	font: normal 24px/1.2 "open_sansbold";
+}
+
+#field_6_7 {
+	width: 395px;
+}
+
+.yellow-button {
+	font: normal 18px/1 "open_sansbold";
+	text-transform: uppercase;
+	padding: 10px 20px;
+	-moz-box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+	-webkit-box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+	box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+	border-radius: 20px;
+	border: 1px solid #e5e5e5;
+	color: #fff;
+	border-color: #d1d1d1;
+	background: #fdc057;
+	background: -moz-linear-gradient(top,#fdc057 0%,#fcac2a 100%);
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#fdc057),color-stop(100%,#fcac2a));
+	background: -webkit-linear-gradient(top,#fdc057 0%,#fcac2a 100%);
+	background: -o-linear-gradient(top,#fdc057 0%,#fcac2a 100%);
+	background: -ms-linear-gradient(top,#fdc057 0%,#fcac2a 100%);
+	background: linear-gradient(to bottom,#fdc057 0%,#fcac2a 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdc057',endColorstr='#fcac2a',GradientType=0);
+	text-shadow: 0 1px 0 #EAAC2A;
+}
+
+.yellow-button:hover,
+.yellow-button:active {
+	background: #fcac2a;
+	background: -moz-linear-gradient(top,#fcac2a 0%,#fdc057 100%);
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#fcac2a),color-stop(100%,#fdc057));
+	background: -webkit-linear-gradient(top,#fcac2a 0%,#fdc057 100%);
+	background: -o-linear-gradient(top,#fcac2a 0%,#fdc057 100%);
+	background: -ms-linear-gradient(top,#fcac2a 0%,#fdc057 100%);
+	background: linear-gradient(to bottom,#fcac2a 0%,#fdc057 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcac2a',endColorstr='#fdc057',GradientType=0);
+	text-shadow: 0 -1px 0 #EAAC2A;
+	text-decoration: none;
+}
+
+.large-button {
+	font-size: 24px;
+	padding: 16px 30px;
+	border-radius: 30px;
+}
+
+#menu-more-resources li {
+	padding-left: 15px;
+	background-image: url(https://www.mdfoodbank.org/wp-content/themes/mdfoodbank/img/framework/bullet-sidebar-noshadow.png);
+	background-repeat: no-repeat;
+	background-position: 0 5px;
+}
+
+#input_8_5 {
+	height: 36px;
+	border-radius: 25px;
+	background-color: #ffffff !important;
+	background-position: 0 100% !important;
+	font: 30px/1.6 open_sansregular, Arial, Helvetica, sans-serif;
+	width: 78%;
+	color: #bbbbbb !important;
+}
+
+#gform_submit_button_8 {
+	width: 40%;
+}
+
+.ginput_container.ginput_container_select {
+	width: 99%;
+}
+
+#input_6, #input_8 {
+	color: #7B6E65;
+}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px) {
+	.resp-fix h1 {
+		font-size: 30px !important;
+	}
+}
+
+.resp-fix {
+	margin: 0 20px 0 498px;
+}
+
+#text-159 {
+	overflow: hidden !important;
+}
+
+.fullbtn {
+	width: 100%;
+}
+
+.twitter-timestamp {
+	color: #816E65;
+}
+
+#home-callouts .photo-borders {
+	border: 1px solid #d6d6d6;
+}
+
+h2.month {
+	margin-top: 12px;
+}
+
+/* BEGIN DONATE BUTTON COLOR CHANGES */
+li#menu-item-4150.menu-item-4150 {
+	background: -webkit-gradient(linear,left top,right top,from(#ef3124),to(#CA2A1E));
+	background: -webkit-linear-gradient(top,#ef3124,#CA2A1E);
+	background: -moz-linear-gradient(top,#ef3124,#CA2A1E);
+	background: -o-linear-gradient(top,#ef3124,#CA2A1E);
+	background: -ms-linear-gradient(top,#ef3124,#CA2A1E);
+	background: linear-gradient(top,#ef3124,#CA2A1E);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ef3124',endColorstr='#CA2A1E',GradientType=0);
+	background-color: #ef3124;
+}
+
+#main-nav ul li.menu-item-4150 a {
+	color: #ffffff;
+	text-shadow: 1px 1px 0 #7B6E65;
+}
+
+#main-nav li li.menu-item-4151 a, #main-nav li li.menu-item-14838 a, #main-nav li li.menu-item-7318 a, #main-nav li li.menu-item-7319 a, #main-nav li li.menu-item-576 a, #main-nav li li.menu-item-19301 a, #main-nav li li.menu-item-19694 a {
+	color: #4c1901;
+	text-shadow: 1px 1px 0 #ff7a38;
+}
+
+#main-nav li li.menu-item-4151 a:hover, #main-nav li li.menu-item-14838 a:hover, #main-nav li li.menu-item-7318 a:hover, #main-nav li li.menu-item-7319 a:hover, #main-nav li li.menu-item-576 a:hover, #main-nav li li.menu-item-19301 a:hover, #main-nav li li.menu-item-19694 a:hover {
+	color: #ffffff;
+	text-shadow: 1px 1px 0 #4c1901;
+}
+
+/* BEGIN MOBILES */
+.grey-button {
+	font: normal 18px/1 "open_sansbold";
+	text-transform: uppercase;
+	padding: 10px 20px;
+	-moz-box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+	-webkit-box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+	box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+	border-radius: 20px;
+	border: 1px solid #999695;
+	color: #7b6e65 !important;
+	text-shadow: 0 1px 0 #fff;
+	background: #C0BDBB;
+	background: -moz-linear-gradient(top,#C0BDBB 0%,#999695 100%);
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#C0BDBB),color-stop(100%,#999695));
+	background: -webkit-linear-gradient(top,#C0BDBB 0%,#999695 100%);
+	background: -o-linear-gradient(top,#C0BDBB 0%,#999695 100%);
+	background: -ms-linear-gradient(top,#C0BDBB 0%,#999695 100%);
+	background: linear-gradient(to bottom,#C0BDBB 0%,#999695 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#C0BDBB',endColorstr='#999695',GradientType=0);
+}
+
+.grey-button a {
+	color: #fff;
+	text-shadow: 1px 1px 0 #7B6E65;
+}
+
+.red-button a:hover, .silver-button a:hover, .grey-button a:hover {
+	text-decoration: none;
+}
+
+.grey-button:hover,
+.grey-button:active {
+	background: #7b6e65;
+	background: -moz-linear-gradient(top,#999695 0%,#C0BDBB 100%);
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#999695),color-stop(100%,#C0BDBB));
+	background: -webkit-linear-gradient(top,#999695 0%,#C0BDBB 100%);
+	background: -o-linear-gradient(top,#999695 0%,#C0BDBB 100%);
+	background: -ms-linear-gradient(top,#999695 0%,#C0BDBB 100%);
+	background: linear-gradient(to bottom,#999695 0%,#C0BDBB 100%);
+	text-shadow: 0 -1px 0 #fff;
+}
+
+/* END MOBILES */
+/* END DONATE BUTTON COLOR CHANGES */
+
+/* Andy Donation Form Tweaks */
+.donate-short-new .donate-zip input {
+	float: right;
+    width: 42.5% !important;
+    margin-top: -10px;
+}
+
+.custom-donation-form_wrapper.gform_wrapper .ginput_container .name_first input[type="text"], .custom-donation-form_wrapper.gform_wrapper .ginput_container .name_last input[type="text"] {
+  width: 42.5% !important;
+}
+
+.custom-donation-form_wrapper.gform_wrapper .ginput_container input#input_10 {
+  width: 42.5%;
+}
+
+@media screen and (max-width: 768px ) {
+  .donate-short-new .donate-zip input {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 479px ) {
+  .custom-donation-form_wrapper.gform_wrapper .ginput_container input#input_10 {
+    width: 100% !important;
+  }
+
+	#content .custom-donation-form_wrapper.gform_wrapper .ginput_container .name_first input[type="text"],
+	#content .custom-donation-form_wrapper.gform_wrapper .ginput_container .name_last input[type="text"],
+	.donate-short-new input[type="text"] {
+      float: none !important;
+      width: 100% !important;
+    }
+
+}
+
+.ginput_product_price_label {
+	display: none !important;
+}
+
+#input_39_65 {
+	display: none !important;
+}
+
+/* END Andy Donation Form Tweaks */
+
+/* Brian Popup Maker Tweaks */
+
+#pum-22595 input#input_1, #pum-22795 input#input_1, #pum-22795 input#input_2 {
+padding: 12px;
+}
+
+#pum_popup_title_22912 {
+  line-height:1.15em;
+}
+
+/* END Brian Popup Maker Tweaks */

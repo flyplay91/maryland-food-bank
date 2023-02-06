@@ -1,0 +1,325 @@
+.ginput_container input {
+  margin-bottom: 0 !important;
+}
+.gform_wrapper {
+  .gform_page_footer {
+    margin-top: rem(30);
+    display: flex;
+    .button {
+      margin-right: rem(10);
+      &.gform_previous_button {
+        background: $gray6;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    input[type="button"] {
+      @include form-button-alt($yellow, $red, $base-font-color, $white);
+    }
+    input[type="submit"] {
+      @include form-button-alt($red, $red, $white, $white);
+    }
+  }
+  .gfield {
+    margin-bottom: rem(10);
+    list-style: none;
+    input[type="text"],
+    input[type="tel"],
+    textarea,
+    input[type="email"] {
+      @include form-input();
+    }
+    select {
+      @include form-select();
+    }
+    input[type="checkbox"] {
+      appearance: none;
+      background-color: $red;
+      display: inline-block;
+      position: relative;
+      height: rem(22);
+      width: rem(22);
+      margin-right: rem(10);
+      flex-shrink: 0;
+      text-align: center;
+      top: 5px;
+      // input[type="checkbox"]:active,
+      // input[type="checkbox"]:checked:active {}
+      &:checked {
+        background-color: $red;
+        color: white;
+      }
+      &:checked:after {
+        @include icon();
+        content: "\e911";
+        font-size: rem(14);
+        line-height: rem(22);
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        text-align: center;
+        color: $white;
+      }
+    }
+
+    input[type="radio"] {
+      appearance: none;
+      flex-shrink: 0;
+      background-color: $red;
+      display: inline-block;
+      position: relative;
+      height: rem(22);
+      width: rem(22);
+      margin-right: rem(10);
+      border-radius: 50%;
+      text-align: center;
+      top: 5px;
+      // input[type="checkbox"]:active,
+      // input[type="checkbox"]:checked:active {}
+      &:checked {}
+      &:checked:after {
+        content: '';
+        background: $white;
+        position: relative;
+        margin: 0 auto;
+        display: block;
+        width: rem(10);
+        border-radius: 50%;
+        height: rem(10);
+        top: calc(50% - 5px);
+        text-align: center;
+        color: $white;
+      }
+    }
+
+  }
+  .gfield_sublabel_above {
+
+  }
+  .gfield_checkbox,
+  .gfield_radio {
+    margin: 0;
+    list-style-type: none;
+    li {
+      list-style: none;
+      margin-bottom: rem(20);
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    label {
+      @include form-label($base-font-color);
+      display: inline-block;
+    }
+  }
+  .gfield_label {
+    @include form-label($base-font-color);
+    display: block;
+  }
+  .gform_fields {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .gfield_description {
+    margin-top: rem(10);
+  }
+  .radios-as-buttons {
+    .gfield_radio {
+      padding-left: 0;
+      display: flex;
+      list-style-type: none;
+      li {
+        // display: inline-block;
+        width: 100%;
+        // margin-bottom: rem(12);
+        // padding-right: rem(11);
+        margin-left: -2px;
+        &:first-child {
+          label {
+            border-top-left-radius: $border-radius;
+            border-bottom-left-radius: $border-radius;
+          }
+
+        }
+        &:last-child {
+          label {
+            border-top-right-radius: $border-radius;
+            border-bottom-right-radius: $border-radius;
+          }
+
+        }
+        label {
+
+          font-weight: 700;
+          font-size: rem(14);
+          line-height: rem(21);
+          padding: rem(12) rem(4);
+          transition: background 0.2s;
+
+          width: auto;
+          border: 2px $base-font-color solid;
+          // border-radius: $border-radius;
+          color: $base-font-color;
+          background: $white;
+          text-align: center;
+          display: block;
+          cursor: pointer;
+          font-size: rem(14);
+          &:hover {
+            // border-color: $red;
+            background: $red;
+            color: $white;
+            transition:0.2s;
+          }
+          &:active {
+            border-color: $red;
+            background: $red;
+            color: $white;
+
+          }
+          @include media($mobile-break) {
+            font-size: rem(21.6);
+            line-height: rem(33);
+            padding: rem(12) rem(6);
+          }
+        }
+        input[type="radio"] {
+          display: none;
+
+        }
+        input[type="radio"]:checked ~ label {
+          // border-color: $red;
+          background: $red;
+          color: $white;
+        }
+      }
+    }
+  }
+  .radios-as-toggles {
+    .gfield_radio {
+      display: flex;
+      li {
+        width: 100%;
+      }
+      padding-left: 0;
+      display: flex;
+      list-style-type: none;
+      li {
+        // display: inline-block;
+        width: 100%;
+        // margin-bottom: rem(12);
+        // padding-right: rem(11);
+        margin-left: -2px;
+        &:first-child {
+          label {
+            border-top-left-radius: $border-radius;
+            border-bottom-left-radius: $border-radius;
+          }
+
+        }
+        &:last-child {
+          label {
+            border-top-right-radius: $border-radius;
+            border-bottom-right-radius: $border-radius;
+          }
+
+        }
+        label {
+
+          font-weight: 700;
+          font-size: rem(14);
+          line-height: rem(21);
+          padding: rem(12) rem(4);
+          transition: background 0.2s;
+
+          width: auto;
+          border: 2px $base-font-color solid;
+          // border-radius: $border-radius;
+          color: $base-font-color;
+          background: $white;
+          text-align: center;
+          display: block;
+          cursor: pointer;
+          font-size: rem(14);
+          &:hover {
+            // border-color: $red;
+            background: $red;
+            color: $white;
+            transition:0.2s;
+          }
+          &:active {
+            border-color: $red;
+            background: $red;
+            color: $white;
+
+          }
+          @include media($mobile-break) {
+            font-size: rem(21.6);
+            line-height: rem(33);
+            padding: rem(12) rem(6);
+          }
+        }
+        input[type="radio"] {
+          display: none;
+
+        }
+        input[type="radio"]:checked ~ label {
+          // border-color: $red;
+          background: $red;
+          color: $white;
+        }
+      }
+    }
+  }
+  .ginput_container_date {
+    .clear-multi {
+      display: flex;
+      flex-direction: column;
+      @include media($mobile-break) {
+        flex-direction: row;
+      }
+      .ginput_container {
+        margin-bottom: rem(20);
+        @include media($mobile-break) {
+          margin-right: rem(20);
+        }
+        select {
+        }
+      }
+    }
+  }
+  // Address Field
+  .ginput_container_address {
+
+    > span {
+      // margin-bottom: rem(10);
+      // &:last-child {
+      //   margin-bottom: 0;
+      // }
+
+      label {
+        display: block;
+        @include form-label($base-font-color);
+        margin-bottom: rem(5);
+        margin-top: rem(5);
+
+      }
+    }
+  }
+  .gfield_sublabel_above {
+    .ginput_container_address {
+      > span {
+        label {
+          margin-top: rem(5);
+        }
+      }
+    }
+  }
+  .gfield_radio {
+
+  }
+}

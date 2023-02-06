@@ -1,0 +1,67 @@
+@import url(~normalize.css);
+
+@import "silc/overrides";
+
+@import "~silc-core/src/scss/index";
+@import "~silc-grid/src/scss/index";
+@import "~silc-accordion/src/scss/index";
+@import "~silc-nav/src/scss/index";
+@import "~silc-offcanvas/src/scss/index";
+@import "~silc-utilities/src/scss/index";
+
+@import "variables";
+@import "fonts";
+
+// --------------------------------------------------
+// Base Styles/Gobal Styles
+// --------------------------------------------------
+
+@import "base/mixins";
+@import "base/utility";
+
+@import "base/base";
+@import "base/layout";
+@import "base/typography";
+@import "base/wordpress";
+@import "base/old";
+
+// --------------------------------------------------
+// General/Global
+// --------------------------------------------------
+
+@import "../components/header/header";
+@import "../components/footer/footer";
+@import "../components/content-header/content-header";
+@import "../components/hero/hero";
+@import "../components/social/social";
+@import "../components/breadcrumbs/breadcrumbs";
+@import "../components/pagination/pagination";
+@import "../components/main-menu/main-menu";
+@import "../components/utility-menu/utility-menu";
+@import "../components/donate-menu/donate-menu";
+@import "../components/offcanvas/offcanvas";
+
+// --------------------------------------------------
+// Component Styles
+// --------------------------------------------------
+@import "components/figure";
+@import "components/forms";
+
+// --------------------------------------------------
+// Div Components
+// --------------------------------------------------
+@import "divi/divi-overrides";
+
+// --------------------------------------------------
+// Template Specific Styles
+// --------------------------------------------------
+@import "templates/donate";
+@import "templates/posts";
+@import "templates/home";
+body.et-pb-theme-maryland.food.bank #et-boc {
+  @import "templates/posts"; // Duplicate for divi support
+  @import "templates/find-food";
+
+}
+
+@import "templates/find-food";
